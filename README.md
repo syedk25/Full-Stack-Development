@@ -1,3 +1,4 @@
 # Master-HTML
-In this repository ;
- all meterial about html for easy to learn
+In this repository ;<br/>
+ 1)Meterial (.pdf, .ppt, .notes)
+ 2)sample codes (.html, .css, .js, .jsx)
