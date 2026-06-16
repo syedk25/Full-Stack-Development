@@ -1,0 +1,82 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to top */
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.todo-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.todo-container h1 {
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.todo-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.todo-form input[type="text"] {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.todo-form input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+.todo-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.todo-form button:hover {
+  background-color: #0056b3;
+}
+
+.todo-form button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.todo-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  .todo-container {
+    padding: 15px;
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+  .todo-container h1 {
+    font-size: 1.5em;
+  }
+}
