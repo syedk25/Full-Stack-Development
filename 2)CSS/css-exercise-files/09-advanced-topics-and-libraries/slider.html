@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <script src="jquery.min.js"></script>
+    <script src="cycle2.min.js"></script>
+    <style>
+    	div img{
+    		width: 600px;
+    	}
+    </style>
+</head>
+
+<body>
+	 <div id=outside>
+    <!-- prev/next links -->
+    <div class=center>
+        <span id=prev>&lt;&lt;Prev </span>
+        <span id=next> Next&gt;&gt;</span>
+    </div>
+    <!-- slideshow -->
+    <div class="cycle-slideshow" 
+        data-cycle-fx=scrollHorz
+        data-cycle-timeout=0
+        data-cycle-prev="#prev"
+        data-cycle-next="#next"
+        >
+        <img src="img/1.jpg">
+        <img src="img/2.jpg">
+        <img src="img/3.jpg">
+
+    </div>
+</div>
+</body>
+
+</html>

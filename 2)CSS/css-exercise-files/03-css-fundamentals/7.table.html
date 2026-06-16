@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Table</title>
+	<style>
+		h2{
+			text-align: center;
+		}
+		table{
+			width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+			border-spacing: 0;
+			border-collapse: collapse;
+		}
+		table th, table  td{
+			border: 1px solid #459eb8;
+			padding: 10px;
+		}
+		table th{
+			background-color: #A2D2E0;
+			color: white;
+			text-align: left;
+			text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+		}
+		table tbody tr:nth-child(odd) td{
+			background-color: #EDF2f0;
+
+		}
+		.sr-col{
+			width: 10%;
+		}
+		.course-col{
+			width: 60%;
+		}
+		.price-col{
+			width: 15%;
+		}
+		.qty-col{
+			width: 15%;
+		}
+		table tr:nth-child(3){
+			text-align: center;
+			vertical-align: top;
+		}
+	</style>
+</head>
+<body>
+	<h2>Styling Table using CSS</h2>
+	<table>
+		<thead>
+			<tr>
+				<th class="sr-col">Sr</th>
+				<th class="course-col">Course Name</th>
+				<th class="price-col">Price</th>
+				<th class="qty-col">Qty</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td >2</td>
+				<td>CSS Fundamentals</td>
+				<td>50,000</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Dart Programming</td>
+				<td>70,000</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>Flutter Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore qui architecto enim porro harum, tenetur laborum laboriosam repellendus laudantium quidem odio aut atque, odit dolorem. Ratione earum sapiente nostrum.</td>
+				<td>80,000</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>Javascript</td>
+				<td>55,000</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>PHP</td>
+				<td>60,000</td>
+				<td>1</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>Sr</th>
+				<th>Course Name</th>
+				<th>Price</th>
+				<th>Qty</th>
+			</tr>
+		</tfoot>
+		
+	</table>
+	
+</body>
+</html>

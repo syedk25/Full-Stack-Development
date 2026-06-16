@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Animations</title>
+	<style>
+		.star{
+			width: 200px;
+			/*animation-name: spinAndMoveStar;
+			animation-duration: 2s;
+			animation-direction: alternate;
+			animation-iteration-count: infinite;*/
+			/*animation-delay: 5s;*/
+			animation: spinAndMoveStar 2s ease-in-out infinite alternate;p
+
+		}
+
+		@keyframes spinAndMoveStar{
+			50%{
+				transform: translateX(150%) rotate(360deg) scale(0.5);
+			}
+			100%{
+				transform: translateX(300%);
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<img src="img/star.png" alt="" class="star">
+	<img src="img/star.png" alt="" class="star">
+	<img src="img/star.png" alt="" class="star">
+	<img src="img/star.png" alt="" class="star"> <br>
+	<img src="img/star.png" alt="" class="star">
+	<img src="img/star.png" alt="" class="star">
+	<img src="img/star.png" alt="" class="star">
+	<img src="img/star.png" alt="" class="star"> <br>
+	<img src="img/star.png" alt="" class="star">
+	<img src="img/star.png" alt="" class="star">
+	<img src="img/star.png" alt="" class="star">
+	<img src="img/star.png" alt="" class="star"> <br>
+
+	
+</body>
+</html>
