@@ -9,7 +9,6 @@
     background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(assets/background.jpg);
     background-size: cover;
     background-position: center;
-    /* background-color: red; */
 }
 #navbar{
     width: 85%;
@@ -47,7 +46,7 @@
     margin-top: 20px;
 }
 #top-section p{
-    margin:20px auto;
+    margin:20px;
     font-weight: 100;
     line-height: 25px;
 }

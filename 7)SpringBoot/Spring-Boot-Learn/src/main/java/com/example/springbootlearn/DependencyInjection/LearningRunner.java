@@ -4,7 +4,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration // Tells Spring to process this class for bean configurations
+// Tells Spring to process this class for bean configurations
+@Configuration
 public class LearningRunner {
 
     // Spring runs this block automatically at startup and passes the NotificationManager bean

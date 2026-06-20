@@ -12,6 +12,7 @@
     <bytecodeTargetLevel>
       <module name="demo" target="17" />
       <module name="DependencyInjection" target="17" />
+      <module name="Spring-Boot-Learn" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
