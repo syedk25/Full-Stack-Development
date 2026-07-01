@@ -1,6 +1,4 @@
-
-
-/*div {
+div {
   background-color: blue;
 }
 
@@ -11,10 +9,10 @@ h1 {
 
 h2 {
   background-color: orange;
-}*/
+}
 
 
-/*body {
+body {
   background-image: url("color.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -22,40 +20,40 @@ h2 {
   
   background: orange url("color.png") no-repeat fixed right top;
 
-}*/
+}
 
-/*.border {
+.border {
 
   border-width: 5px;
   border-style: solid;
   border-color: blue red black orange;
   border: 5px solid orange;
-}*/
+}
 
-/*p {
+p {
   border: 3px solid green;
   padding: 20px 40px;
  
 
-}*/
+}
 
 
-/*
+
   padding: one value; goes for the whole directions
   padding: three values;
   padding: two values; first one for top and bottom
   and the second value for the right and left
-*/
 
-/*
+
+
   margin: one value; goes for the whole directions
   margin: three values;
   margin: two values; first one for top and bottom
   and the second value for the right and left
-*/
 
 
-/*h3 {
+
+h3 {
   width: 130px;
   height: 140px;
   border: 10px solid black;
@@ -69,10 +67,10 @@ div {
   margin: 40px;
   padding: 40px;
   
-}*/
+}
 
 
-/*p {
+p {
   outline-color: blueviolet;
   outline-style: dotted;
   border-style: solid;
@@ -81,14 +79,14 @@ div {
 }
 
 h2 {
-  /*outline-width: 10px;
+ outline-width: 10px;
   outline-style: dashed;
   outline-color: red;
 
   outline: 10px dashed blue;
   border: 5px solid red;
 
-}*/
+}
 
 
 h2 {
