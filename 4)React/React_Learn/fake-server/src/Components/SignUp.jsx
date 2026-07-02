@@ -17,7 +17,7 @@ const validationSchema = Yup.object().shape({
     .required('Please confirm your password')
 });
 
-let counter = 0;
+let counter = 0; //to check how many times page reloads
 
 function SignUp() 
 {
