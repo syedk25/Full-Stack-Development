@@ -8,6 +8,8 @@
   </head>
   <body>
     <div>
+
+      <!-- nav bar -->
       <nav class="flex justify-between items-center px-4 py-4 shadow-md">
         <h1 class="text-xl font-bold">Logo</h1>
         <div class="hidden sm:flex gap-4 items-center">
@@ -40,6 +42,8 @@
           />
         </svg>
       </nav>
+
+      <!-- profile card -->
       <div class="p-6 rounded-xl shadow-lg mx-auto mt-10 max-w-sm bg-white">
         <img
           src="photo.jpg"
@@ -73,5 +77,38 @@
     </button>
 </div> 
     </div>
+
+    <!-- pricing card -->
+    <div class="flex flex-col items-center p-6 max-w-sm border rounded-lg shadow-lg mt-10 mx-auto">
+      <h1 class="text-2xl font-bold" > 🚀 Pro Plan</h1>
+      <h2 class="text-3xl font-bold text-blue-500 mt-2" > ₹499/month</h2>
+      <ul class="space-y-3 my-6 w-full">
+    <li>✔ Unlimited Projects</li>
+    <li>✔ Priority Support</li>
+    <li>✔ Cloud Backup</li>
+</ul>
+      <button class="bg-blue-500 py-2 rounded-lg text-white w-full transition duration-300 hover:bg-blue-600">Get Started</button>
+    </div>
+
+    <!-- login form -->
+     <div class="max-w-sm mx-auto mt-6 rounded-lg border p-6 shadow-lg space-y-4">
+      <h1 class="text-center text-2xl font-bold">Welcome Back</h1>
+      <form action="" class="space-y-4">
+        <label for="email" class="block font-medium mb-1">Email</label>
+        <input type="email" name="" id="email" 
+        class="w-full border border-gray-300 rounded-lg outline-none py-2 mb-4
+        focus:outline-none focus:ring-2 focus:ring-blue-400">
+       
+        <label for="password" class="block font-medium mb-1">Password</label>
+        <input type="password" name="" id="password" 
+        class="w-full border border-gray-300 rounded-lg outline-none py-2
+        focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <label class="flex items-center gap-2"><input type="checkbox">Remember me</label>
+        <button class="w-full rounded-lg bg-blue-500 py-2 text-white transition duration-300 hover:bg-blue-600">Login</button>
+        <a href="#" class="block text-center text-sm text-blue-500 hover:underline">Forgot Password?</a>
+ </form>
+     </div>
+
+     
   </body>
 </html>
