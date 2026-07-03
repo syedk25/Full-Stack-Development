@@ -8,15 +8,70 @@
   </head>
   <body>
     <div>
-     <nav class="flex justify-between items-center px-4 py-4 shadow-md">
+      <nav class="flex justify-between items-center px-4 py-4 shadow-md">
         <h1 class="text-xl font-bold">Logo</h1>
-        <div class="flex gap-4 items-center">
-          <a >Home</a>
-          <a  >About</a>
-          <a  >Contact</a>
-          <button class="bg-blue-500 py-2 px-4 text-white rounded-lg">Login</button>
+        <div class="hidden sm:flex gap-4 items-center">
+          <a
+            class="hover:text-blue-500 transition-all duration-300 hover:scale-105 border-b-0 hover:border-b-2"
+            >Home</a
+          >
+          <a class="hover:text-blue-500 transition-colors duration-300"
+            >About</a
+          >
+          <a class="hover:text-blue-500 transition-colors duration-300"
+            >Contact</a
+          >
+          <button class="bg-blue-500 py-2 px-4 text-white rounded-lg">
+            Login
+          </button>
         </div>
+        <svg
+          class="h-6 w-6 sm:hidden"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 6H20M4 12H20M4 18H20"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </nav>
+      <div class="p-6 rounded-xl shadow-lg mx-auto mt-10 max-w-sm bg-white">
+        <img
+          src="photo.jpg"
+          alt="😀😀😀😀😀
+😀😀😀😀😀"
+          class="rounded-full w-32 h-32 mx-auto mt-6 object-cover"
+        />
+        <div class="text-center space-y-2">
+    <h1 class="text-xl font-bold">
+        K. Syed Mahatheer Mohammed
+    </h1>
+
+    <h2 class="text-gray-700">
+        Java Full Stack Developer
+    </h2>
+
+    <p class="text-sm text-gray-500">
+        Passionate about Spring Boot & React.js
+    </p>
+</div>
+
+<div class="flex justify-center gap-4 mt-6">
+    <button
+        class="rounded-lg bg-blue-500 px-4 py-2 text-white transition duration-300 hover:bg-blue-600">
+        Follow
+    </button>
+
+    <button
+        class="rounded-lg border border-gray-400 px-4 py-2 transition duration-300 hover:bg-gray-100">
+        Message
+    </button>
+</div> 
     </div>
   </body>
 </html>
