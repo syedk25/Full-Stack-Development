@@ -35,14 +35,7 @@ function Trigger-FinalPush {
     Pop-Location # Return to original folder location safely
 }
 
-# Catch 'Ctrl + C' command inside terminal
-[Management.Automation.Internal.Host.ControlCHandler]$action = {
-    Write-Host "`n[ALERT] Ctrl+C detected! Safely stopping..." -ForegroundColor Magenta
-    Trigger-FinalPush
-    Exit
-}
-$Host.UI.RawUI.add_ControlCHandler($action)
-
+# --- START OF MAIN LOOP ---
 try {
     $WaitSeconds = $WaitMinutes * 60
 
@@ -68,7 +61,7 @@ try {
         }
         
         if ($i -lt $TotalHours) { 
-            Write-Host "Waiting $WaitMinutes minutes before checking code... (Ctrl+C to exit)" -ForegroundColor Cyan
+            Write-Host "Waiting $WaitMinutes minutes before checking code... (Press Ctrl+C to exit early)" -ForegroundColor Cyan
             Start-Sleep -Seconds $WaitSeconds 
         }
     }
@@ -76,6 +69,14 @@ try {
     Write-Host "`nAll hours finished successfully!" -ForegroundColor Green
     Trigger-FinalPush
 
-} finally {
-    $Host.UI.RawUI.remove_ControlCHandler($action)
+} 
+catch [PipelineStoppedException], [System.Management.Automation.PipelineStoppedException] {
+    # This automatically catches your 'Ctrl + C' interrupt block smoothly!
+    Write-Host "`n[ALERT] Ctrl+C interrupt detected! Safely stopping loops..." -ForegroundColor Magenta
+    Trigger-FinalPush
+}
+catch {
+    # Handles any other unexpected general errors
+    Write-Host "`n[ERROR] An unexpected issue occurred: $_" -ForegroundColor Red
+    Trigger-FinalPush
 }
