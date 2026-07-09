@@ -1,8 +1,12 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./**/*.{html,js}'],
+// tailwind.config.js
+module.exports = {
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        bg: 'var(--bg-color)',
+        text: 'var(--text-color)',
+        btn: 'var(--btn-color)',
+      },
+    },
   },
-  plugins: [],
 }
