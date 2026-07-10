@@ -1,11 +1,14 @@
-// tailwind.config.js
 module.exports = {
   theme: {
     extend: {
-      colors: {
-        bg: 'var(--bg-color)',
-        text: 'var(--text-color)',
-        btn: 'var(--btn-color)',
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
       },
     },
   },
