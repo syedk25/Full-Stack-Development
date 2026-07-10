@@ -193,107 +193,123 @@
       </section>
     </div>
     <div class="bg-white/30 backdrop-blur-md p-6 rounded-lg">
-  <h2 class="text-xl font-bold text-white">Glass Card</h2>
-  <p class="text-white">This card uses backdrop blur.</p>
-</div>
-<div class="bg-[url('https://picsum.photos/600/400')] bg-black/40 bg-cover bg-center h-64 rounded-lg">
-</div>
-<div class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 h-32 w-full rounded-lg"></div>
-<div class="grid grid-cols-3 gap-6 p-6">
-  <div class="bg-gradient-to-r from-blue-400 to-blue-600 text-white p-6 rounded-lg">Card 1</div>
-  <div class="bg-gradient-to-tr from-green-400 via-yellow-300 to-red-500 text-white p-6 rounded-lg">Card 2</div>
-  <div class="bg-gradient-to-b from-purple-500 to-pink-500 text-white p-6 rounded-lg">Card 3</div>
-</div>
-<div class="space-y-4 p-6">
-  <h1 class="text-4xl font-extrabold text-gray-800 tracking-tight">Heading Example</h1>
-  <p class="text-lg leading-relaxed text-gray-600">This is a paragraph with relaxed line spacing for readability.</p>
-  <p class="text-sm text-gray-500 italic">Small caption text with italics.</p>
-  <p class="uppercase tracking-wide text-blue-600">Uppercase spaced text</p>
-  <p class="underline decoration-wavy decoration-red-500">Wavy underline effect</p>
-</div>
-<div class="bg-white text-black dark:bg-gray-900 dark:text-white p-6 rounded-lg">
-  <h2 class="text-xl font-bold">Dark Mode Card</h2>
-  <p>This card adapts to theme.</p>
-</div>
-<button class="bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800 px-4 py-2 rounded">
-  Adaptive Button
-</button>
-<button class="bg-gray-800 text-white px-4 py-2 rounded focus-visible:ring-2 focus-visible:ring-green-500">
-  Accessible Button
-</button>
-<div class="motion-safe:animate-bounce">I bounce only if motion is allowed</div>
-<div class="motion-reduce:animate-none">I stop bouncing if motion is reduced</div>
-<form class="space-y-4 p-6 bg-gray-100 rounded-lg">
-  <label class="block">
-    <span class="sr-only">Email Address</span>
-    <input type="email" placeholder="Email Address" class="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-  </label>
-  <button class="bg-blue-600 text-white px-4 py-2 rounded focus-visible:ring-2 focus-visible:ring-yellow-400">
-    Submit
-  </button>
-</form>
-<div class="grid grid-cols-2 gap-6 p-6">
-  <!-- Absolute Badge -->
-  <div class="relative bg-white shadow p-6">
-    <span class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded">New</span>
-    <p>Card with badge</p>
-  </div>
+      <h2 class="text-xl font-bold text-white">Glass Card</h2>
+      <p class="text-white">This card uses backdrop blur.</p>
+    </div>
+    <div class="bg-[url('https://picsum.photos/600/400')] bg-black/40 bg-cover bg-center h-64 rounded-lg"></div>
+    <div class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 h-32 w-full rounded-lg"></div>
+    <div class="grid grid-cols-3 gap-6 p-6">
+      <div class="bg-gradient-to-r from-blue-400 to-blue-600 text-white p-6 rounded-lg">Card 1</div>
+      <div class="bg-gradient-to-tr from-green-400 via-yellow-300 to-red-500 text-white p-6 rounded-lg">Card 2</div>
+      <div class="bg-gradient-to-b from-purple-500 to-pink-500 text-white p-6 rounded-lg">Card 3</div>
+    </div>
+    <div class="space-y-4 p-6">
+      <h1 class="text-4xl font-extrabold text-gray-800 tracking-tight">Heading Example</h1>
+      <p class="text-lg leading-relaxed text-gray-600">
+        This is a paragraph with relaxed line spacing for readability.
+      </p>
+      <p class="text-sm text-gray-500 italic">Small caption text with italics.</p>
+      <p class="uppercase tracking-wide text-blue-600">Uppercase spaced text</p>
+      <p class="underline decoration-wavy decoration-red-500">Wavy underline effect</p>
+    </div>
+    <div class="bg-white text-black dark:bg-gray-900 dark:text-white p-6 rounded-lg">
+      <h2 class="text-xl font-bold">Dark Mode Card</h2>
+      <p>This card adapts to theme.</p>
+    </div>
+    <button class="bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800 px-4 py-2 rounded">
+      Adaptive Button
+    </button>
+    <button class="bg-gray-800 text-white px-4 py-2 rounded focus-visible:ring-2 focus-visible:ring-green-500">
+      Accessible Button
+    </button>
+    <div class="motion-safe:animate-bounce">I bounce only if motion is allowed</div>
+    <div class="motion-reduce:animate-none">I stop bouncing if motion is reduced</div>
+    <form class="space-y-4 p-6 bg-gray-100 rounded-lg">
+      <label class="block">
+        <span class="sr-only">Email Address</span>
+        <input
+          type="email"
+          placeholder="Email Address"
+          class="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </label>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded focus-visible:ring-2 focus-visible:ring-yellow-400">
+        Submit
+      </button>
+    </form>
+    <div class="grid grid-cols-2 gap-6 p-6">
+      <!-- Absolute Badge -->
+      <div class="relative bg-white shadow p-6">
+        <span class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded">New</span>
+        <p>Card with badge</p>
+      </div>
 
-  <!-- Scrollable Content -->
-  <div class="bg-gray-100 h-32 overflow-y-scroll p-4">
-    <p>Scrollable content line 1</p>
-    <p>Scrollable content line 2</p>
-    <p>Scrollable content line 3</p>
-    <p>Scrollable content line 4</p>
-    <p>Scrollable content line 5</p>
-    <p>Scrollable content line 6</p>
-  </div>
-</div>
-<div class="relative">
-  <div class="absolute -top-4 bg-purple-400 p-2">Badge</div>
-</div>
-<div class="p-8 space-y-6 bg-gray-100">
-  <h1 class="text-2xl font-bold">Spacing Demo</h1>
-  <div class="flex space-x-4">
-    <div class="bg-blue-300 p-4">Box 1</div>
-    <div class="bg-blue-400 p-4">Box 2</div>
-    <div class="bg-blue-500 p-4">Box 3</div>
-  </div>
-  <div class="grid grid-cols-2 gap-8">
-    <div class="bg-green-300 p-6">Grid Item 1</div>
-    <div class="bg-green-400 p-6">Grid Item 2</div>
-  </div>
-</div>
-<div class="grid grid-cols-3 gap-6 p-6">
-  <div class="w-32 h-32 bg-blue-300">Fixed Box</div>
-  <div class="w-1/2 h-48 bg-green-300">Fractional Box</div>
-  <div class="min-w-[150px] max-w-sm h-24 bg-yellow-300">Constrained Box</div>
-</div>
+      <!-- Scrollable Content -->
+      <div class="bg-gray-100 h-32 overflow-y-scroll p-4">
+        <p>Scrollable content line 1</p>
+        <p>Scrollable content line 2</p>
+        <p>Scrollable content line 3</p>
+        <p>Scrollable content line 4</p>
+        <p>Scrollable content line 5</p>
+        <p>Scrollable content line 6</p>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="absolute -top-4 bg-purple-400 p-2">Badge</div>
+    </div>
+    <div class="p-8 space-y-6 bg-gray-100">
+      <h1 class="text-2xl font-bold">Spacing Demo</h1>
+      <div class="flex space-x-4">
+        <div class="bg-blue-300 p-4">Box 1</div>
+        <div class="bg-blue-400 p-4">Box 2</div>
+        <div class="bg-blue-500 p-4">Box 3</div>
+      </div>
+      <div class="grid grid-cols-2 gap-8">
+        <div class="bg-green-300 p-6">Grid Item 1</div>
+        <div class="bg-green-400 p-6">Grid Item 2</div>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-6 p-6">
+      <div class="w-32 h-32 bg-blue-300">Fixed Box</div>
+      <div class="w-1/2 h-48 bg-green-300">Fractional Box</div>
+      <div class="min-w-[150px] max-w-sm h-24 bg-yellow-300">Constrained Box</div>
+    </div>
 
-<div class="flex flex-col sm:flex-row justify-between items-center gap-4 p-6 bg-gray-100">
-  <div class="bg-blue-300 p-4 flex-1">Box 1</div>
-  <div class="bg-blue-400 p-4 flex-1">Box 2</div>
-  <div class="bg-blue-500 p-4 flex-none">Fixed Box</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-6 p-6">
-  <!-- Sidebar -->
-  <div class="col-span-1 bg-gray-200 p-4">Sidebar</div>
-  
-  <!-- Main Content -->
-  <div class="col-span-3 bg-gray-300 p-6 flex flex-col gap-4">
-    <div class="bg-white p-4 shadow">Card 1</div>
-    <div class="bg-white p-4 shadow">Card 2</div>
-    <div class="bg-white p-4 shadow">Card 3</div>
-  </div>
-</div>
-<div class="transform origin-bottom rotate-45 bg-red-400 p-4">Pivoted Rotation</div>
-<div class="grid grid-cols-3 gap-6 p-6">
-  <div class="transform scale-110 bg-blue-300 p-4">Scaled</div>
-  <div class="transform rotate-45 bg-green-300 p-4">Rotated</div>
-  <div class="transform translate-y-4 bg-yellow-300 p-4">Translated</div>
-  <div class="transform skew-x-12 bg-purple-300 p-4">Skewed</div>
-</div>
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 p-6 bg-gray-100">
+      <div class="bg-blue-300 p-4 flex-1">Box 1</div>
+      <div class="bg-blue-400 p-4 flex-1">Box 2</div>
+      <div class="bg-blue-500 p-4 flex-none">Fixed Box</div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 p-6">
+      <!-- Sidebar -->
+      <div class="col-span-1 bg-gray-200 p-4">Sidebar</div>
 
-
+      <!-- Main Content -->
+      <div class="col-span-3 bg-gray-300 p-6 flex flex-col gap-4">
+        <div class="bg-white p-4 shadow">Card 1</div>
+        <div class="bg-white p-4 shadow">Card 2</div>
+        <div class="bg-white p-4 shadow">Card 3</div>
+      </div>
+    </div>
+    <div class="transform origin-bottom rotate-45 bg-red-400 p-4">Pivoted Rotation</div>
+    <div class="grid grid-cols-3 gap-6 p-6">
+      <div class="transform scale-110 bg-blue-300 p-4">Scaled</div>
+      <div class="transform rotate-45 bg-green-300 p-4">Rotated</div>
+      <div class="transform translate-y-4 bg-yellow-300 p-4">Translated</div>
+      <div class="transform skew-x-12 bg-purple-300 p-4">Skewed</div>
+    </div>
+    <div class="grid grid-cols-3 gap-6 p-6">
+      <div class="transition-transform duration-300 ease-out hover:scale-110 bg-blue-300 p-4">Scale</div>
+      <div class="transition-colors duration-500 ease-in hover:bg-red-500 bg-red-300 p-4">Color</div>
+      <div class="transition-opacity duration-700 ease-in-out hover:opacity-50 bg-green-300 p-4">Opacity</div>
+    </div>
+    <img src="https://picsum.photos/200" class="hover:blur-sm rounded-lg" />
+    <div class="drop-shadow-lg bg-blue-400 text-white p-4 rounded-lg">Shadowed Box</div>
+    <div class="grid grid-cols-4 gap-6 p-6">
+      <img src="https://picsum.photos/200" class="blur-md rounded-lg" />
+      <img src="https://picsum.photos/200" class="brightness-150 rounded-lg" />
+      <img src="https://picsum.photos/200" class="contrast-200 rounded-lg" />
+      <img src="https://picsum.photos/200" class="grayscale rounded-lg" />
+    </div>
   </body>
 </html>
