@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/9)Java.iml" filepath="$PROJECT_DIR$/9)Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Projects/Bank_Account_Simulation/Bank_Account_Simulation.iml" filepath="$PROJECT_DIR$/Projects/Bank_Account_Simulation/Bank_Account_Simulation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Projects/BasicCalculator-Gui/BasicCalculator-Gui.iml" filepath="$PROJECT_DIR$/Projects/BasicCalculator-Gui/BasicCalculator-Gui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Projects/Java_GUI_ToDo_App/Java_GUI_ToDo_App.iml" filepath="$PROJECT_DIR$/Projects/Java_GUI_ToDo_App/Java_GUI_ToDo_App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Projects/LibraryManagementSystem/LibraryManagementSystem.iml" filepath="$PROJECT_DIR$/Projects/LibraryManagementSystem/LibraryManagementSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Projects/NotesApp/NotesApp.iml" filepath="$PROJECT_DIR$/Projects/NotesApp/NotesApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Projects/OnlineQuizMaker/OnlineQuizMaker.iml" filepath="$PROJECT_DIR$/Projects/OnlineQuizMaker/OnlineQuizMaker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Projects/Projects.iml" filepath="$PROJECT_DIR$/Projects/Projects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Projects/StudentManagementSystemInTerminal/StudentManagementSystemInTerminal.iml" filepath="$PROJECT_DIR$/Projects/StudentManagementSystemInTerminal/StudentManagementSystemInTerminal.iml" />
+    </modules>
+  </component>
+</project>

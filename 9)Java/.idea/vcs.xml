@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Projects/Bank_Account_Simulation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Projects/Basic-Calculator-InTerminal" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Projects/BasicCalculator-Gui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Projects/Java_GUI_ToDo_App" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Projects/LibraryManagementSystem" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Projects/NotesApp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Projects/OnlineQuizMaker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Projects/StudentManagementSystemInTerminal" vcs="Git" />
+  </component>
+</project>
