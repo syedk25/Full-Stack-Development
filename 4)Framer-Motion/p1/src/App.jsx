@@ -5,6 +5,7 @@ import Hero from "./Hero";
 import HoverCard from "./HoverCard";
 import About from "./About";
 import Skills from "./Skills";
+import ProjectCard from "./ProjectCard";
 
 function App() 
 {
@@ -171,6 +172,7 @@ function App()
     <HoverCard/>
     <About/>
     <Skills/>
+    <ProjectCard/>
     </div>
   );
 }

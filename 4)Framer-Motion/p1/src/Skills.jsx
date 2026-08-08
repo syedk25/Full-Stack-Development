@@ -21,11 +21,14 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: "easeOut"
-    }
-  }
-};
+      ease: "easeOut",
 
+      type: "spring",
+      stiffness: 100,
+      damping: 15
+    }
+  } 
+}; 
 function Skills() {
   const skills = ["Java", "Spring Boot", "React", "JavaScript", "MySQL", "Docker"];
 
@@ -35,7 +38,7 @@ function Skills() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ 
+        viewport={{
           amount: 0.2
         }}
         className="grid gap-6 md:grid-cols-3"
@@ -45,7 +48,7 @@ function Skills() {
             {skill}
           </motion.div>
         ))}
-      </motion.div>
+      </motion.div>      
     </section>
   );
 }
