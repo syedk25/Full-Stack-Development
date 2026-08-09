@@ -1,4 +1,4 @@
-import { easeInOut, motion, transform } from "motion/react";
+import { AnimatePresence, easeInOut, motion, transform } from "motion/react";
 import AnimatedList from "./AnimatedList";
 import StaggerChildren from "./StaggerChildren";
 import Hero from "./Hero";
@@ -6,6 +6,10 @@ import HoverCard from "./HoverCard";
 import About from "./About";
 import Skills from "./Skills";
 import ProjectCard from "./ProjectCard";
+import AnimatePresence1 from "./AnimatePresence1";
+import Tabs from './Tabs'
+import Navbar from "./Navbar";
+import Gestures from "./Gestures";
 
 function App() 
 {
@@ -173,6 +177,10 @@ function App()
     <About/>
     <Skills/>
     <ProjectCard/>
+    <AnimatePresence1/>
+    <Tabs/>
+    <Navbar/>
+    <Gestures/>
     </div>
   );
 }
