@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+}
+
+.logo {
+  font-size: 29px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero-content h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 19px;
+  margin-bottom: 30px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: white;
+  border-radius: 5px;
+  color: #764ba2;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #f4f4f4;
+}
+
+/* features section */
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.feature {
+  flex: 1 1 250px;
+  max-width: 300px;
+  margin: 20px;
+  text-align: center;
+}
+
+.feature h3 {
+  color: #764ba2;
+  margin-bottom: 10px;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.testimonial {
+  max-width: 300px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+/* faq section */
+.faq {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+/* cta section */
+.cta {
+  background: linear-gradient(to right, #764ba2, #667eea);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.cta .button {
+  background-color: white;
+  color: #764ba2;
+  margin-top: 20px;
+}
+
+/* newsletter section */
+.newsletter {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.newsletter form {
+  margin-top: 20px;
+}
+
+.newsletter input[type="email"] {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  background-color: #764ba2;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: #5a3c91;
+}
+
+/* team section */
+.team {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.team-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.member {
+  max-width: 200px;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}

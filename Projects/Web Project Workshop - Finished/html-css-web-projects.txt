@@ -1,0 +1,20 @@
+created already:
+Student card
+credit card
+Recipe Website
+FAQ Page – Styled question/answer sections with minimal accordion simulation using CSS.
+digital resume / cv
+linktree / mylinks
+
+
+wizytowka
+Animated Login Page / register
+todo list
+contact form
+Travel Destination Cards
+psychologist website
+personal portfolio website
+certificate of completion of this course
+
+Optional:
+currency converter

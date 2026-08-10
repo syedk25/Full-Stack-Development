@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Page</title>
+</head>
+
+<body>
+    <p id="text">There is a Paragraph</p>
+
+    <button id="changebutton">Change Text</button>
+
+    <p id="p2"></p>
+
+    <button id="b2">More info+</button>
+
+    <script type="text/javascript">
+        document.getElementById("changebutton").onclick = function() {
+            document.getElementById("text").style.display = "block";
+        };
+
+        document.getElementById("b2").onclick = function() {
+            document.getElementById("p2").style.display = "none";
+        };
+    </script>
+</body>
+
+</html>

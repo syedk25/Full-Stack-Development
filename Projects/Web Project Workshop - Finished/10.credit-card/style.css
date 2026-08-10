@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e1e2f;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  width: 350px;
+  height: 200px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #3b8d99, #6b6b83);
+  color: white;
+  padding: 55px 20px 15px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chip {
+  width: 50px;
+  height: 35px;
+  background: linear-gradient(145deg, #d4af37, #b8860b);
+  border: rgb(120, 120, 120) 2px solid;
+  border-radius: 8px;
+}
+
+.card-number {
+  font-size: 19px;
+  letter-spacing: 3px;
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.card-details label {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.name,
+.expiry {
+  font-size: 16px;
+  margin-top: 5px;
+}

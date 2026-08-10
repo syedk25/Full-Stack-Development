@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, #00135d, #020f4a);
+  font-family: "Roboto", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.converter-container {
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #777777;
+  margin-bottom: 20px;
+}
+
+.provider {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.currency-row,
+.amount-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.column {
+  flex: 1;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #555555;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  /* appearance: none; */
+}
+
+.converted-column input {
+  background-color: #f9f9f9;
+  cursor: not-allowed;
+}
+
+.convert-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.convert-button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Page</title>
+</head>
+
+<body>
+    <button id="changebutton">Change Text</button>
+
+    <p id="text">There is a Paragraph</p>
+
+    <script type="text/javascript">
+        document.getElementById("changebutton").onclick = function() {
+            var myArray = Array();
+            var textarray = "";
+
+            myArray[0] = "Pizza";
+            myArray[1] = "Ice Cream";
+            myArray[2] = "Juce";
+            myArray[3] = "Fruit";
+            myArray[4] = "Salad";
+
+            for (var i = 2; i <= 4; i++) {
+                textarray = textarray + myArray[i] + "<br>";
+            }
+
+            document.getElementById("text").innerHTML = textarray;
+        };
+    </script>
+</body>
+
+</html>

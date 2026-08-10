@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+JP&family=Roboto&display=swap');
+/*font-family: 'Lobster', cursive;
+font-family: 'Noto Sans JP', sans-serif;
+font-family: 'Roboto', sans-serif;*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.navbar{
+	background-color: black;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.7rem;
+	position: sticky;
+	top: 0;
+}
+.navbar ul{
+	display: flex;
+}
+.navbar ul li{
+	list-style: none;
+}
+.navbar ul li a{
+	color: white;
+	text-decoration: none;
+	padding: 1rem;
+	font-family: 'Roboto', sans-serif;
+
+
+}
+.navbar ul li a:hover{
+	background: #00a8ad;
+}
+.logo{
+font-family: 'Lobster', cursive;	
+}
+.color-text{
+	color: #00a8ad;
+}
+.header{
+	background: url('1.jpg');
+	height: 95vh;
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size: cover; 
+}
+.header div{
+	color: white;
+	background: rgba(0,0,0,0.7);
+	height: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Noto Sans JP', sans-serif;
+
+}
+.head-text1{
+	font-size: 4rem;
+	margin-bottom: 0.6rem;
+}
+.p-text1{
+	font-size: 1.2rem;
+	margin-bottom: 1rem;
+}
+.btn{
+	background-color: #00a8ad;
+	color: white;
+	padding: 0.7rem;
+	border: none;
+	width: 6.7rem;
+}
+
+#Services{
+	display: flex;
+	flex: 1;
+}
+.container{
+	margin: 10px auto;
+	width: 74rem;
+}
+.Services-h3{
+	
+	text-align: center;
+}
+.cards-p{
+	font-size: 1rem;
+	margin: 10 auto;
+}
+.cards{
+	text-align: center;
+	font-family: 'Noto Sans JP', sans-serif;
+	padding: 1.3rem;
+}
+.cards i{
+	background-color:#00a8ad;
+	padding: 2rem;
+	border-radius: 4rem;
+}
+#About{
+	background: url('2.jpg');
+	height: 70vh;
+	background-size: cover;
+}
+#About div{
+	background-color: rgba(0,0,0,0.7);
+	height: 100%;
+}
+.About-h1{
+	color: white;
+	text-align:right;
+	padding: 8rem 6rem 0 45rem;
+	font-family: 'Roboto', sans-serif;
+	font-size: 2.5rem;
+}
+.About-p{
+	color: white;
+	text-align:right;
+	padding: 1rem 6rem 0 60rem;
+	font-family: 'Roboto', sans-serif;
+}
+.About-btn{
+	margin: 1rem 6rem 0 0;
+	float: right;
+	padding: 0.5rem;
+}
+#img{
+	background: url('11.png');
+	height: 100vh;
+	background-size: cover;
+	height: 40rem;
+	width: 50rem;
+}
+.form{
+	text-align: right;
+	margin-left: 50rem;
+	margin-top: 9.5rem;
+}
+input{
+	height: 3.5rem;
+	width: 30rem;
+	border: 10px solid #4e8598;
+}
+.f-h1{
+	font-size: 3rem;
+	color: #00a8ad;
+	font-family: 'Roboto', sans-serif;
+	text-align: right;
+
+
+}
+label{
+font-size: 1rem;
+color: black;
+font-family: 'Roboto', sans-serif;
+}
+.f-btn{
+	background-color: #4e8598;
+	padding: 0.7rem;
+width:5.6rem; 
+margin-top: 1rem;
+}
+footer{
+	background: #384a4f;
+	color: white;
+	text-align: center;
+	font-family: 'Lobster', cursive;
+	font-size: 1.1rem;
+
+}

@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: #f9f9f9;
+  padding: 40px;
+  max-width: 700px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide the checkbox */
+.faq-item input {
+  display: none;
+}
+
+.faq-item label {
+  display: block;
+  padding: 18px 24px;
+  font-weight: bold;
+  position: relative;
+  user-select: none;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.faq-item label:hover {
+  background-color: #f0f0f0;
+}
+
+/* Add a plus/minus icon */
+.faq-item label::after {
+  content: "+";
+  position: absolute;
+  right: 24px;
+  font-size: 22px;
+  transition: transform 0.3s;
+}
+
+/* The answer content */
+.faq-answer {
+  max-height: 0;
+  padding: 0 24px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.5;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+/* When checkbox is checked, rotate icon */
+.faq-item input:checked + label::after {
+  content: "-";
+  transform: rotate(180deg);
+}
+
+/* Show answer when checkbox is checked */
+.faq-item input:checked ~ .faq-answer {
+  max-height: 300px; /* enough height for answer */
+  padding: 15px 24px 24px 24px;
+}

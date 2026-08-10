@@ -1,0 +1,43 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+button{
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 24px;
+  background-color: #05a47a;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+button:hover{
+  background-color: #068362;
+}
+input{
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 24px;
+  border: 1px solid #ccc;
+}
+h1{
+  font-size: 45px;
+}
+#gifs {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Adding some space between each GIF item */
+.item {
+  margin: 10px;
+}

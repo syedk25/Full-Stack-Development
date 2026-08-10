@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title>Form Validation Text Fields</title>
+	<script>
+		function validate(){
+			var email = document.myform.email.value;
+			var password = document.myform.password.value;
+			var phone = document.myform.phone.value;
+
+			//Validation - All fields are mandatory
+
+			if(email==""){
+				alert("Email is mandatory");
+				document.myform.email.focus();
+				return false;
+			}else if(password==""){
+				
+				alert("Password is mandatory");
+				document.myform.password.focus();
+				return false;
+			}else if(phone==""){
+				alert("Phone is mandatory");
+				document.myform.phone.focus();
+				return false;
+			}
+
+			//Email validation
+			var exp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			var result = exp.test(email)
+			if (!result)  
+  			{		  
+  				alert("Invalid Email");
+  				document.myform.email.focus();
+    			return false;
+  			} 
+
+  			///Pasword Validation
+
+			exp = /^[A-Za-z0-9\s]{5,8}$/;
+			result = exp.test(password);
+			if(!result){
+				alert("Password should be alpha numeric and a minimum of 5 and maximum of 8 characters");
+				document.myform.password.focus();
+				return false;
+			}
+
+			//Phone validation using a slightly different syntax where we use the regular expression directly
+			if(!(phone.match(/\d/g).length===10)){
+				alert("Phone should be numberic and should have 10 digits");
+				document.myform.phone.focus();
+				return false;
+			}
+
+			alert("Validation Successfull")
+				return true;
+
+		}
+		
+	</script>
+</head>
+
+<body>
+	<h3>User Registration:</h3>
+	<form name="myform" action="registration.jsp" onsubmit="return validate()">
+		Email: <input type="text" name="email"/>
+		Password: <input type="password" name="password"/>
+		Phone: <input type="phone" name="phone"/>
+		<input type="submit" value="register"/>
+
+	</form>
+
+	
+</body>
+
+</html>

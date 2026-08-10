@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fefefe;
+  font-family: "Merriweather", serif;
+  color: #333;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.75;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #2a2a2a;
+  text-align: center;
+}
+
+.author {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 17px;
+}
+
+article {
+  column-count: 2;
+  column-gap: 48px;
+  column-rule: 1px solid #ccc;
+  font-size: 18px;
+}
+
+p {
+  margin-bottom: 24px;
+  text-align: justify;
+}
+
+/* Drop Cap for first letter */
+p:first-of-type::first-letter {
+  float: left;
+  font-size: 72px;
+  line-height: 1;
+  padding-right: 10px;
+  font-weight: 900;
+  color: #b34e00;
+  font-family: "Georgia", serif;
+  text-transform: uppercase;
+}
+
+/* Responsive - single column on narrow screens */
+@media (max-width: 700px) {
+  article {
+    column-count: 1;
+    column-gap: 24px;
+    column-rule: none;
+  }
+
+  p:first-of-type::first-letter {
+    font-size: 56px;
+  }
+}

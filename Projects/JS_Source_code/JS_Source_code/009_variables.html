@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Page</title>
+</head>
+
+<body>
+    <input id="inputtext" type="text" />
+
+    <button id="changebutton">Change Text</button>
+
+    <p id="text">There is a Paragraph</p>
+
+    <script type="text/javascript">
+        document.getElementById("changebutton").onclick = function() {
+            var typetext;
+            var codepage = "dakir2022";
+
+            typetext = document.getElementById("inputtext").value;
+
+            if (codepage == typetext) {
+                alert("Your code is correct");
+            } else {
+                alert("Your code is wrong");
+            }
+        };
+    </script>
+</body>
+
+</html>

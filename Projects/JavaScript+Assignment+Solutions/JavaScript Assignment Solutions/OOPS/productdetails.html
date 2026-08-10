@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Product Details</title>
+	<script>
+	
+	function product(id,name,description,price){
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.price = price;
+		this.displayProductDetails = displayProductDetails;
+		this.calculateDisc = calculateDisc;
+
+	}
+
+	function calculateDisc(percentage){
+		return this.price - (this.price * (percentage/100))
+	}
+
+	function displayProductDetails(){
+		document.write("Name: "+this.name+"<br/>");
+		document.write("Description: "+this.description+"<br/>");
+		document.write("Discounted Price: "+this.calculateDisc(50));
+
+	}
+
+	var product = new product(1,"IPhone","Its Awesome",1000);
+	product.displayProductDetails();	
+
+	</script>
+</head>
+
+</html>

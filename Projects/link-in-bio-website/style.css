@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: aliceblue; */
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.links-card {
+  background-color: rgb(255, 255, 255);
+  padding: 40px 50px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 500px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5px;
+  border: 3px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+.links-card h1 {
+  margin: 12px 0 8px;
+  font-size: 32px;
+  color: #222;
+}
+
+.bio {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-style: italic;
+  color: #888;
+  margin-bottom: 30px;
+}
+
+.links a {
+  display: block;
+  background-color: #e0f7fa;
+  color: #00796b;
+  padding: 16px;
+  margin: 14px 0;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  transition: all 0.2s ease;
+}
+
+.links a:hover {
+  background-color: #b2ebf2;
+  color: #004d40;
+}
+
+.links a i {
+  margin-right: 8px;
+}
+
+footer {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #575757;
+}
+
+@media (max-width: 600px) {
+  .links-card {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    padding: 30px 20px;
+    box-shadow: none;
+  }
+}
