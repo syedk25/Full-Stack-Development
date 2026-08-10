@@ -1,10 +1,25 @@
 import React from "react";
 import { useRef } from "react";
-import { motion, useMotionValue } from "motion/react";
+import { motion, useMotionValue, useTransform, useScroll } from "motion/react";
 
 function Gestures() {
-  const x = useMotionValue(0);
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  const x = useTransform(scrollYProgress, [0, 1], [-200, 200]);
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0]);
+
+  let currentValue = 0;
+  const rotate = useTransform(x, (latest) => 1 + latest);
+
+  const scale = useTransform(x, [-200, 0, 200], [0.8, 1, 0.8]);
+  const background = useTransform(x, [-200, 0, 200], ["#ef4444", "#ffffff", "#22c55e"]);
   const constraintsRef = useRef(null);
+
   const cardVariants = {
     normal: {
       scale: 1
@@ -122,6 +137,57 @@ function Gestures() {
         </div>
       </motion.div>
       <motion.div style={{ x }}>Hello</motion.div>
+      <div
+        ref={constraintsRef}
+        className="relative h-40 w-full overflow-hidden rounded-xl border border-dashed border-slate-500 p-4"
+      >
+        <motion.div
+          drag
+          dragConstraints={constraintsRef}
+          className="h-20 w-20 rounded-xl bg-blue-500"
+          style={{ x, rotate }}
+        >
+          Hello
+        </motion.div>
+        <motion.div
+          drag
+          style={{
+            x,
+            rotate,
+            scale,
+            background
+          }}
+          className="h-24 w-24 rounded-xl bg-blue-500"
+        >
+          welcome
+        </motion.div>
+      </div>
+      <button
+        onClick={() => {
+          currentValue = x.get();
+          x.set(100);
+        }}
+      >
+        move
+      </button>
+      <button
+        onClick={() => {
+          x.set(currentValue);
+        }}
+      >
+        move back
+      </button>
+      <motion.div
+        className="fixed left-0 right-0 top-0 h-1 bg-amber-600"
+        style={{ scaleX: scrollYProgress, transformOrigin: "left", opacity, scale }}
+      ></motion.div>
+      <motion.div style={{ y }}>Background</motion.div>
+      <motion.div className="text-4xl bg-amber-300" style={{ opacity }}>
+        Content
+      </motion.div>
+      <section ref={ref} className="min-h-screen">
+        <motion.div style={{ x }}>About Me</motion.div>
+      </section>
     </>
   );
 }

@@ -10,6 +10,7 @@ import AnimatePresence1 from "./AnimatePresence1";
 import Tabs from './Tabs'
 import Navbar from "./Navbar";
 import Gestures from "./Gestures";
+import SwipeCard from './SwipeCard'
 
 function App() 
 {
@@ -24,7 +25,7 @@ function App()
   }
   return (
     <div className="flex flex-col gap-2 min-h-screen items-center justify-center">
-      <motion.div
+        <motion.div
         initial={{
           opacity: 0,
           y: 50,
@@ -43,7 +44,7 @@ function App()
         className="rounded-xl bg-black/20 backdrop-blur-lg border border-black px-8 py-6 text-black"
       >
         Hello 👋
-      </motion.div>
+      </motion.div> 
       <motion.div
         className=" bg-pink-500 px-5 py-2 rounded-full text-white border focus:border-black"
         initial={{
@@ -149,8 +150,8 @@ function App()
         }}
       >
         multiple keyframes
-      </motion.div>
-       
+      </motion.div> 
+
       <motion.button
         whileHover={{
           scale: 1.05
@@ -167,20 +168,22 @@ function App()
       >
         View Projects
       </motion.button>
-        <motion.div 
-        variants={itemVariant} initial="hidden" animate="visible">Hello</motion.div>
+      <motion.div variants={itemVariant} initial="hidden" animate="visible">
+        Hello
+      </motion.div>
 
-    <AnimatedList/>
-    <StaggerChildren/>
-    <Hero/>
-    <HoverCard/>
-    <About/>
-    <Skills/>
-    <ProjectCard/>
-    <AnimatePresence1/>
-    <Tabs/>
-    <Navbar/>
-    <Gestures/>
+      <AnimatedList />
+      <StaggerChildren />
+      <Hero />
+      <HoverCard />
+      <About />
+      <Skills />
+      <ProjectCard />
+      <AnimatePresence1 />
+      <Tabs />
+      <Navbar />
+      <Gestures />
+      <SwipeCard/>
     </div>
   );
 }
