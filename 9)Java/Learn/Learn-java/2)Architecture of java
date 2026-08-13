@@ -1,0 +1,14 @@
+java has 3 components
+
+1) JDK: (java development kit)
+     -used by the developers to create java applications
+     -include: (Tools, Libraries, Compiler)
+  
+2) JRE: (java run-time environment)
+     -used by end users.
+     -provide runtime environment for running java applications.
+     -include: (Byte code verifier, Libraries, but not include development tools)
+    
+3) JVM: (java virtual machine)
+     -convert byte code into platform specific code available for all platforms.
+     -include: (Interpreter, JIT-compiler, garbage collector)
