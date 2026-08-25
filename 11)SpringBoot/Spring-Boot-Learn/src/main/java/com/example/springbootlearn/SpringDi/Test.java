@@ -11,5 +11,6 @@ public class Test {
 
         College college = context.getBean(College.class);
         college.showDepartment();
+        ((AnnotationConfigApplicationContext) context).close();
     }
 }
