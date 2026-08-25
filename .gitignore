@@ -1,0 +1,6 @@
+# IntelliJ IDEA — ignore everywhere in this repo
+.idea/
+*.iws
+*.iml
+*.ipr
+ 
