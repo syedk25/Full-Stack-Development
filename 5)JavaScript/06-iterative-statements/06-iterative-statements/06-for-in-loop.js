@@ -10,3 +10,5 @@ var users = {
 for(var user in users){
     console.log(`${user} : ${users[user]}`);
 }
+
+// iterate over the values of object or array
