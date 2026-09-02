@@ -13,3 +13,5 @@ var user = {
 console.log(user.getUserInfo("Super Admin"));
 
 user.greet();
+
+console.log(user.hasOwnProperty("skill"))

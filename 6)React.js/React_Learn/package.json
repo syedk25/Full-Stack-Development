@@ -1,5 +1,8 @@
 {
-  "dependencies": {
-    "@react-spring/web": "^10.1.2"
-  }
+  "name": "react-learn-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "./*"
+  ]
 }

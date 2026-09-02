@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import CounterApp from './components/CounterApp'
+ 
 import Content from './components/Content'
 import Footer from './components/Footer'
 import Header from './components/Header'

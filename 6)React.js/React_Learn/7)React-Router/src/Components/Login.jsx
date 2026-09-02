@@ -8,19 +8,15 @@ function Login() {
   let navigate = useNavigate(); // hook to navigate programmatically
 
   return (
-    <>
-      <h1>Login Successful!<br /><br />
-        User Name: {user}</h1>
-      <button onClick={goHome}>go home</button>
+    <div className="bg-gray-400 p-4 rounded-xl   flex flex-col gap-4">
+      <h1 className="bg-gray-600 rounded-md px-3">Login Successful! </h1>
+      <h2> User Name: {user}</h2>
+      <button onClick={()=>navigate("/")} className='bg-green-500 rounded-full'>go home</button>
 
-      <button onClick={() => navigate('/product')}>go to products</button>
-    </>
-
-  )
+      <button onClick={() => navigate("/product")} className='bg-red-500 rounded-full'>go to products</button>
+    </div>
+  );
 }
-
-  function goHome() {
-    navigate('/syed');
-  }
+ 
   
 export default Login

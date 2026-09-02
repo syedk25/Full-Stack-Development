@@ -1,18 +1,35 @@
-var employee = ["Ali", "Graphic Designer", 50000];
-// var name = employee[0];
-// var position = employee[1];
-// var salary = employee[2];
+let numbers = [1, 2, 3, "four", true];
 
-// var [name, position, salary] =  employee;
+let [, , , num] = numbers;   // skip values
 
-// console.log(position);
+console.log(num);
+ 
 
-var anotherEmployee = {
-    name: "kashif",
-    position: "developer",
-    salary: 80000,
-};
+let [, , , num1 = "one"] = numbers;  //set default
 
-var {name, position, salary} = anotherEmployee;
+console.log(num1);
 
-console.log(position);
+
+let user={name:"k.syed",age:21}
+
+let{name,age}=user
+
+console.log(name,age)
+
+let{name:Uname}=user //set new name 
+
+console.log(Uname)
+
+users={age:22}
+
+let{name:UserName="king"}=users  // set default
+
+console.log(UserName)
+
+
+let nestedObject={id:1,profile:{name1:"k",age1:20}}
+
+let {id,profile:{name1,age1}}=nestedObject
+
+console.log(id,name1,age1)
+
