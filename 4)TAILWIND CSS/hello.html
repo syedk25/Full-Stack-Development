@@ -1,33 +1,323 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gradient Text Demo</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glassmorphism Demo</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gradient-to-r from-blue-400 to-purple-600 flex items-center justify-center min-h-screen">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradient Text Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="flex justify-between px-4 py-4 shadow-md">
+      <h1 class="text-xl font-bold">K. Syed</h1>
+      <nav>
+        <a href="">Home</a>
+        <a href="">Features</a>
+        <input type="text" name="" id="" class="border-2 rounded" />
+      </nav>
+    </header>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 p-8 bg-purple-100">
+      <!-- Card 1 -->
+      <div
+        class="bg-[rgba(255,255,255,0.2)] shadow-md rounded-lg p-6 hover:shadow-xl focus-within:ring-2 first:border-2 first:border-blue-500"
+      >
+        <h2 class="text-xl font-bold">Basic Plan</h2>
+        <p class="mt-2 text-gray-600">Perfect for starters</p>
+        <button
+          class="mt-4 w-full bg-blue-400 text-white py-2 rounded hover:bg-blue-600 active:bg-blue-800 focus:ring-2"
+        >
+          Choose Plan
+        </button>
+      </div>
 
-  <div class="bg-[rgba(255,255,255,0.2)] backdrop-blur-md border border-[rgba(255,255,255,0.3)] 
-              p-6 rounded-xl shadow-lg w-80 text-center">
-    <h1 class="text-2xl font-bold text-white">Glassmorphism Card</h1>
-    <p class="mt-2 text-white/80">This card uses RGBA transparency and backdrop blur.</p>
-    <button class="mt-4 px-4 py-2 rounded bg-gradient-to-r from-pink-500 to-yellow-500 text-white opacity-80 font-semibold hover:opacity-90 transition">
-      Click Me
+      <!-- Card 2 -->
+      <div
+        class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl focus-within:ring-2 odd:bg-gray-50 even:bg-gray-200"
+      >
+        <h2 class="text-xl font-bold">Pro Plan</h2>
+        <p class="mt-2 text-gray-600">Best for growing teams</p>
+        <button
+          class="mt-4 w-full bg-green-400 text-white py-2 rounded hover:bg-green-600 active:bg-green-800 focus:ring-2"
+        >
+          Choose Plan
+        </button>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl focus-within:ring-2 last:border-2 last:border-red-500"
+      >
+        <h2 class="text-xl font-bold">Enterprise Plan</h2>
+        <p class="mt-2 text-gray-600">For large organizations</p>
+        <button class="mt-4 w-full bg-red-400 text-white py-2 rounded hover:bg-red-600 active:bg-red-800 focus:ring-2">
+          Choose Plan
+        </button>
+      </div>
+    </div>
+    <div class="border-t-4 border-red-500 w-16 h-16 mx-auto mt-20 rounded-full animate-bounce"></div>
+    <div class="relative">
+      <span class="animate-ping absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-4 w-4 bg-green-500"></span>
+      <div class="animate-pulse bg-gray-300 h-32 w-64 rounded-lg"></div>
+      <button class="animate-bounce bg-blue-500 text-white px-4 py-2 rounded">Click Me</button>
+    </div>
+    <button
+      class="bg-blue-400 text-white px-4 py-2 rounded transition-colors duration-300 ease-in-out hover:bg-blue-600"
+    >
+      Hover Me
     </button>
-  </div>
 
-</body>
-</html>
+    <div class="bg-green-400 w-32 h-32 transition-transform duration-500 ease-out hover:scale-110">Hover to Scale</div>
+    <div class="flex gap-6 p-6">
+      <div class="bg-blue-400 w-24 h-24 transition-transform duration-700 ease-linear hover:translate-x-20">Linear</div>
+      <div class="bg-green-400 w-24 h-24 transition-transform duration-700 ease-in hover:translate-x-20">Ease-In</div>
+      <div class="bg-red-400 w-24 h-24 transition-transform duration-700 ease-out hover:translate-x-20">Ease-Out</div>
+      <div class="bg-yellow-400 w-24 h-24 transition-transform duration-700 ease-in-out hover:translate-x-20">
+        Ease-In-Out
+      </div>
+    </div>
+    <div class="bg-blue-400 w-32 h-32 transition-transform duration-1000 ease-in-out hover:skew-x-6">
+      Hover to Scale
+    </div>
+    <div class="bg-green-400 w-32 h-32 transition-transform duration-300 hover:rotate-45">Hover to Rotate</div>
+    <div class="bg-red-400 w-32 h-32 transition-transform duration-300 hover:translate-x-10">Hover to Move Right</div>
+    <div class="bg-yellow-400 w-32 h-32 transition-transform duration-300 hover:-skew-y-6">Hover to Skew</div>
 
-</body>
+    <div class="bg-blue-400 w-32 h-32 transition-transform duration-300 hover:scale-x-150">Hover → Wider</div>
+    <div class="bg-green-400 w-32 h-32 transition-transform duration-300 hover:scale-y-150">Hover → Taller</div>
+    <div class="bg-red-400 w-32 h-32 transition-transform duration-300 hover:scale-x-125 hover:-scale-y-75">
+      Hover → Wide & Short
+    </div>
+    <div class="bg-blue-400 w-32 h-32 transition-transform duration-500 hover:-scale-x-110">Hover → Flip & Stretch</div>
+    <img src="photo.jpg" class="w-32 transition duration-500 hover:-scale-x-100" />
+    <img src="photo.jpg" class="w-32 transition-transform duration-500 hover:-scale-y-100" />
+    <div class="animate-spin rounded-full h-16 p-5 mx-auto w-16 border-t-8 border-blue-500"></div>
+    <div class="relative">
+      <span
+        class="animate-ping absolute inline-flex h-4 w-4 mx-auto translate-x-50 rounded-full bg-green-400 opacity-75"
+      ></span>
+      <span class="relative inline-flex rounded-full h-4 w-4 bg-green-500"></span>
+    </div>
+    <div class="animate-pulse bg-gray-300 h-32 w-64 rounded-lg"></div>
+    <button class="animate-bounce bg-blue-500 text-white px-4 py-2 rounded">Click Me</button>
+    <div class="animate-wiggle">I wiggle!</div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 p-6 bg-gray-100">
+      <!-- Loader Card -->
+      <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+        <p class="mt-4 text-gray-700 font-semibold">Loading Data...</p>
+      </div>
+
+      <!-- Notification Card -->
+      <div class="bg-white shadow-md rounded-lg p-6 flex items-center gap-4">
+        <div class="relative">
+          <span class="animate-ping absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-4 w-4 bg-green-500"></span>
+        </div>
+        <p class="text-gray-700 font-semibold">New Message Received</p>
+      </div>
+
+      <!-- Skeleton Loader Card -->
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <div class="animate-pulse bg-gray-300 h-24 w-full rounded-lg"></div>
+        <p class="mt-4 text-gray-700 font-semibold">Fetching User Profile...</p>
+      </div>
+
+      <!-- Bouncing Button Card -->
+      <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center">
+        <button class="animate-bounce bg-blue-500 text-white px-6 py-2 rounded">Refresh</button>
+        <p class="mt-4 text-gray-700 font-semibold">Tap to Update</p>
+      </div>
+    </div>
+    <section class="bg-gray-100 py-16">
+      <div class="max-w-6xl mx-auto text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-800">Real-Time Dashboard</h1>
+        <p class="mt-4 text-gray-600">Stay updated with live loaders, notifications, and interactive actions.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
+        <!-- Loader Card -->
+        <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center">
+          <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+          <p class="mt-4 text-gray-700 font-semibold">Loading Data...</p>
+        </div>
+
+        <!-- Notification Card -->
+        <div class="bg-white shadow-md rounded-lg p-6 flex items-center gap-4">
+          <div class="relative">
+            <span class="animate-ping absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-green-500"></span>
+          </div>
+          <p class="text-gray-700 font-semibold">New Message Received</p>
+        </div>
+
+        <!-- Skeleton Loader Card -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <div class="animate-pulse bg-gray-300 h-24 w-full rounded-lg"></div>
+          <p class="mt-4 text-gray-700 font-semibold">Fetching User Profile...</p>
+        </div>
+
+        <!-- Bouncing Button Card -->
+        <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center">
+          <button class="animate-bounce bg-blue-500 text-white px-6 py-2 rounded">Refresh</button>
+          <p class="mt-4 text-gray-700 font-semibold">Tap to Update</p>
+        </div>
+      </div>
+    </section>
+    <div class="grid grid-cols-3 gap-6 p-6">
+      <img src="photo.jpg" class="w-48 h-48 object-cover" alt="Brightened" />
+      <img src="photo.jpg" class="w-48 h-48 object-cover blur-sm" alt="Blurred" />
+      <img src="photo.jpg" class="w-48 h-48 object-cover grayscale" alt="Grayscale" />
+      <img src="photo.jpg" class="w-48 h-48 object-cover brightness-125" alt="Brightened" />
+      <img src="photo.jpg" class="w-48 h-48 object-cover contrast-200" alt="Blurred" />
+      <img src="photo.jpg" class="w-48 h-48 object-cover invert" alt="Brightened" />
+      <img src="photo.jpg" class="w-48 h-48 object-cover sepia" alt="Grayscale" />
+      <img src="photo.jpg" class="w-48 h-48 object-cover hue-rotate-90" alt="Grayscale" />
+    </div>
+    <div class="flex flex-col justify-center items-center gap-5 bg-blue-500 p-10">
+      <div class="relative bg-white/20 p-6 rounded-lg shadow-lg w-64">
+        <h2 class="text-xl font-bold text-white">Glass Card</h2>
+        <p class="text-white">This card uses backdrop blur.</p>
+      </div>
+      <div class="bg-white/30 backdrop-blur-md p-6 rounded-lg">
+        <h2 class="text-xl font-bold text-white">Glass Card</h2>
+        <p class="text-white">This card uses backdrop blur.</p>
+      </div>
+      <section class="bg-[url('https://picsum.photos/800/600')] bg-cover h-screen flex items-center justify-center">
+        <div class="hover:backdrop-blur-xl p-8 rounded-xl shadow-lg">
+          <h1 class="text-3xl font-bold text-white">Welcome Back</h1>
+          <p class="text-white mt-2">Login to continue</p>
+          <input
+            type="text"
+            placeholder="Username"
+            class="mt-4 w-full p-2 rounded bg-white/40 text-black backdrop-blur-sm backdrop-brightness-100"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            class="mt-4 w-full p-2 rounded bg-white/40 text-black backdrop-blur-sm"
+          />
+          <button class="mt-6 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Login</button>
+        </div>
+      </section>
+    </div>
+    <div class="bg-white/30 backdrop-blur-md p-6 rounded-lg">
+      <h2 class="text-xl font-bold text-white">Glass Card</h2>
+      <p class="text-white">This card uses backdrop blur.</p>
+    </div>
+    <div class="bg-[url('https://picsum.photos/600/400')] bg-black/40 bg-cover bg-center h-64 rounded-lg"></div>
+    <div class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 h-32 w-full rounded-lg"></div>
+    <div class="grid grid-cols-3 gap-6 p-6">
+      <div class="bg-gradient-to-r from-blue-400 to-blue-600 text-white p-6 rounded-lg">Card 1</div>
+      <div class="bg-gradient-to-tr from-green-400 via-yellow-300 to-red-500 text-white p-6 rounded-lg">Card 2</div>
+      <div class="bg-gradient-to-b from-purple-500 to-pink-500 text-white p-6 rounded-lg">Card 3</div>
+    </div>
+    <div class="space-y-4 p-6">
+      <h1 class="text-4xl font-extrabold text-gray-800 tracking-tight">Heading Example</h1>
+      <p class="text-lg leading-relaxed text-gray-600">
+        This is a paragraph with relaxed line spacing for readability.
+      </p>
+      <p class="text-sm text-gray-500 italic">Small caption text with italics.</p>
+      <p class="uppercase tracking-wide text-blue-600">Uppercase spaced text</p>
+      <p class="underline decoration-wavy decoration-red-500">Wavy underline effect</p>
+    </div>
+    <div class="bg-white text-black dark:bg-gray-900 dark:text-white p-6 rounded-lg">
+      <h2 class="text-xl font-bold">Dark Mode Card</h2>
+      <p>This card adapts to theme.</p>
+    </div>
+    <button class="bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800 px-4 py-2 rounded">
+      Adaptive Button
+    </button>
+    <button class="bg-gray-800 text-white px-4 py-2 rounded focus-visible:ring-2 focus-visible:ring-green-500">
+      Accessible Button
+    </button>
+    <div class="motion-safe:animate-bounce">I bounce only if motion is allowed</div>
+    <div class="motion-reduce:animate-none">I stop bouncing if motion is reduced</div>
+    <form class="space-y-4 p-6 bg-gray-100 rounded-lg">
+      <label class="block">
+        <span class="sr-only">Email Address</span>
+        <input
+          type="email"
+          placeholder="Email Address"
+          class="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </label>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded focus-visible:ring-2 focus-visible:ring-yellow-400">
+        Submit
+      </button>
+    </form>
+    <div class="grid grid-cols-2 gap-6 p-6">
+      <!-- Absolute Badge -->
+      <div class="relative bg-white shadow p-6">
+        <span class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded">New</span>
+        <p>Card with badge</p>
+      </div>
+
+      <!-- Scrollable Content -->
+      <div class="bg-gray-100 h-32 overflow-y-scroll p-4">
+        <p>Scrollable content line 1</p>
+        <p>Scrollable content line 2</p>
+        <p>Scrollable content line 3</p>
+        <p>Scrollable content line 4</p>
+        <p>Scrollable content line 5</p>
+        <p>Scrollable content line 6</p>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="absolute -top-4 bg-purple-400 p-2">Badge</div>
+    </div>
+    <div class="p-8 space-y-6 bg-gray-100">
+      <h1 class="text-2xl font-bold">Spacing Demo</h1>
+      <div class="flex space-x-4">
+        <div class="bg-blue-300 p-4">Box 1</div>
+        <div class="bg-blue-400 p-4">Box 2</div>
+        <div class="bg-blue-500 p-4">Box 3</div>
+      </div>
+      <div class="grid grid-cols-2 gap-8">
+        <div class="bg-green-300 p-6">Grid Item 1</div>
+        <div class="bg-green-400 p-6">Grid Item 2</div>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-6 p-6">
+      <div class="w-32 h-32 bg-blue-300">Fixed Box</div>
+      <div class="w-1/2 h-48 bg-green-300">Fractional Box</div>
+      <div class="min-w-[150px] max-w-sm h-24 bg-yellow-300">Constrained Box</div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 p-6 bg-gray-100">
+      <div class="bg-blue-300 p-4 flex-1">Box 1</div>
+      <div class="bg-blue-400 p-4 flex-1">Box 2</div>
+      <div class="bg-blue-500 p-4 flex-none">Fixed Box</div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 p-6">
+      <!-- Sidebar -->
+      <div class="col-span-1 bg-gray-200 p-4">Sidebar</div>
+
+      <!-- Main Content -->
+      <div class="col-span-3 bg-gray-300 p-6 flex flex-col gap-4">
+        <div class="bg-white p-4 shadow">Card 1</div>
+        <div class="bg-white p-4 shadow">Card 2</div>
+        <div class="bg-white p-4 shadow">Card 3</div>
+      </div>
+    </div>
+    <div class="transform origin-bottom rotate-45 bg-red-400 p-4">Pivoted Rotation</div>
+    <div class="grid grid-cols-3 gap-6 p-6">
+      <div class="transform scale-110 bg-blue-300 p-4">Scaled</div>
+      <div class="transform rotate-45 bg-green-300 p-4">Rotated</div>
+      <div class="transform translate-y-4 bg-yellow-300 p-4">Translated</div>
+      <div class="transform skew-x-12 bg-purple-300 p-4">Skewed</div>
+    </div>
+    <div class="grid grid-cols-3 gap-6 p-6">
+      <div class="transition-transform duration-300 ease-out hover:scale-110 bg-blue-300 p-4">Scale</div>
+      <div class="transition-colors duration-500 ease-in hover:bg-red-500 bg-red-300 p-4">Color</div>
+      <div class="transition-opacity duration-700 ease-in-out hover:opacity-50 bg-green-300 p-4">Opacity</div>
+    </div>
+    <img src="https://picsum.photos/200" class="hover:blur-sm rounded-lg" />
+    <div class="drop-shadow-lg bg-blue-400 text-white p-4 rounded-lg">Shadowed Box</div>
+    <div class="grid grid-cols-4 gap-6 p-6">
+      <img src="https://picsum.photos/200" class="blur-md rounded-lg" />
+      <img src="https://picsum.photos/200" class="brightness-150 rounded-lg" />
+      <img src="https://picsum.photos/200" class="contrast-200 rounded-lg" />
+      <img src="https://picsum.photos/200" class="grayscale rounded-lg" />
+    </div>
+  </body>
 </html>
