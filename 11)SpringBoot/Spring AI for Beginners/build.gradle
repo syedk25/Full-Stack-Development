@@ -1,0 +1,204 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+tasks.register("validateCourseStructure") {
+    group = "verification"
+    description = "Checks course files and learner answer placeholders."
+
+    doLast {
+        def taskInfoFiles = fileTree(rootDir) {
+            include "lesson*/task*/task-info.yaml"
+        }.files.sort { it.path }
+        def problems = []
+
+        taskInfoFiles.each { taskInfo ->
+            def taskDir = taskInfo.parentFile
+            def taskPath = rootDir.toPath().relativize(taskDir.toPath()).toString().replace('\\', '/')
+            def taskType = null
+            def declaredFiles = []
+            def fileEntries = []
+            def currentFile = null
+            def currentPlaceholder = null
+
+            taskInfo.eachLine("UTF-8") { line ->
+                def typeMatcher = line =~ /^type:\s+(.+?)\s*$/
+                def fileMatcher = line =~ /^\s{2}-\s+name:\s+(.+?)\s*$/
+                def visibleMatcher = line =~ /^\s{4}visible:\s+(true|false)\s*$/
+                def editableMatcher = line =~ /^\s{4}editable:\s+(true|false)\s*$/
+                def offsetMatcher = line =~ /^\s{6}-\s+offset:\s+(-?\d+)\s*$/
+                def lengthMatcher = line =~ /^\s{8}length:\s+(-?\d+)\s*$/
+                def placeholderTextMatcher = line =~ /^\s{8}placeholder_text:\s*(.*?)\s*$/
+
+                if (typeMatcher.matches()) {
+                    taskType = typeMatcher.group(1).replaceAll(/^['\"]|['\"]$/, '')
+                } else if (fileMatcher.matches()) {
+                    def relativePath = fileMatcher.group(1).replaceAll(/^['\"]|['\"]$/, '')
+                    declaredFiles.add(relativePath)
+                    currentFile = [path: relativePath, visible: true, editable: true, placeholders: []]
+                    fileEntries.add(currentFile)
+                    currentPlaceholder = null
+                } else if (visibleMatcher.matches() && currentFile != null) {
+                    currentFile.visible = visibleMatcher.group(1).toBoolean()
+                } else if (editableMatcher.matches() && currentFile != null) {
+                    currentFile.editable = editableMatcher.group(1).toBoolean()
+                } else if (offsetMatcher.matches() && currentFile != null) {
+                    currentPlaceholder = [offset: offsetMatcher.group(1).toInteger(), length: null, text: null]
+                    currentFile.placeholders.add(currentPlaceholder)
+                } else if (lengthMatcher.matches() && currentPlaceholder != null) {
+                    currentPlaceholder.length = lengthMatcher.group(1).toInteger()
+                } else if (placeholderTextMatcher.matches() && currentPlaceholder != null) {
+                    currentPlaceholder.text = placeholderTextMatcher.group(1)
+                }
+            }
+
+            if (!new File(taskDir, "src").isDirectory()) {
+                problems.add(taskPath + ": missing src directory")
+            }
+            if (declaredFiles.isEmpty()) {
+                problems.add(taskPath + ": task-info.yaml declares no files")
+            }
+            if (!fileEntries.any { it.visible }) {
+                problems.add(taskPath + ": task-info.yaml has no visible file")
+            }
+            if (taskType == "edu" && !fileEntries.any { !it.placeholders.isEmpty() }) {
+                problems.add(taskPath + ": coding task has no answer placeholders")
+            }
+
+            fileEntries.each { entry ->
+                def courseFile = new File(taskDir, entry.path)
+                if (!courseFile.isFile()) {
+                    problems.add(taskPath + ": declared file does not exist: " + entry.path)
+                } else {
+                    def contents = courseFile.getText("UTF-8").replace('\r\n', '\n').replace('\r', '\n')
+
+                    if (entry.path.startsWith("src/") && entry.path.endsWith(".java") &&
+                            (contents =~ /(?i)\bTODO\b/).find()) {
+                        problems.add(taskPath + ": learner source still contains TODO text: " + entry.path)
+                    }
+
+                    if (taskType == "edu" && entry.visible && entry.editable &&
+                            entry.path.startsWith("src/") && entry.placeholders.isEmpty()) {
+                        problems.add(taskPath + ": editable learner file has no answer placeholders: " + entry.path)
+                    }
+
+                    def validRanges = []
+                    entry.placeholders.eachWithIndex { placeholder, index ->
+                        def label = entry.path + " placeholder " + (index + 1)
+                        if (placeholder.length == null) {
+                            problems.add(taskPath + ": " + label + " has no length")
+                        } else if (placeholder.offset < 0 || placeholder.length <= 0 ||
+                                placeholder.offset + placeholder.length > contents.length()) {
+                            problems.add(taskPath + ": " + label + " range is outside the source file")
+                        } else {
+                            validRanges.add(placeholder)
+                        }
+
+                        if (placeholder.text == null || placeholder.text.trim().isEmpty()) {
+                            problems.add(taskPath + ": " + label + " has no placeholder text")
+                        } else if ((placeholder.text =~ /(?i)\bTODO\b/).find()) {
+                            problems.add(taskPath + ": " + label + " uses TODO instead of an instructional placeholder")
+                        }
+                    }
+
+                    def sortedRanges = validRanges.sort { it.offset }
+                    for (int i = 1; i < sortedRanges.size(); i++) {
+                        def previous = sortedRanges[i - 1]
+                        def current = sortedRanges[i]
+                        if (previous.offset + previous.length > current.offset) {
+                            problems.add(taskPath + ": answer placeholders overlap in " + entry.path)
+                        }
+                    }
+                }
+            }
+
+            fileTree(taskDir) {
+                include "src/**"
+                include "test/**"
+            }.files.each { courseFile ->
+                def relativePath = taskDir.toPath().relativize(courseFile.toPath()).toString().replace('\\', '/')
+                if (!declaredFiles.contains(relativePath)) {
+                    problems.add(taskPath + ": course file is not declared: " + relativePath)
+                }
+            }
+        }
+
+        if (!problems.isEmpty()) {
+            throw new GradleException("Course structure is invalid:\n - " + problems.join("\n - "))
+        }
+
+        def placeholderCount = taskInfoFiles.sum { taskInfo ->
+            (taskInfo.text =~ /(?m)^\s+-\s+offset:\s+\d+\s*$/).count
+        }
+        println "Validated " + taskInfoFiles.size() + " course tasks and " + placeholderCount + " answer placeholders."
+    }
+}
+
+def printOutput(def output) {
+    return tasks.create("printOutput") {
+        println "#educational_plugin_checker_version 1"
+        def separator = System.lineSeparator()
+        def lines = output.toString().split("(?<=" + separator + ")|(?=" + separator + ")")
+        for (line in lines) {
+            println "#educational_plugin" + line
+        }
+    }
+}
+
+subprojects {
+    apply plugin: 'application'
+    apply plugin: 'java'
+
+    tasks.named("compileJava") {
+        dependsOn rootProject.tasks.named("validateCourseStructure")
+    }
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_21
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.compilerArgs += '-parameters'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        // Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+        implementation("org.springframework.boot:spring-boot-starter-web:4.0.6")
+        // Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+        testImplementation("org.springframework.boot:spring-boot-starter-test:4.0.6")
+        testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+        // Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-webmvc-test
+        testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test:4.0.6")
+        // Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-test-autoconfigure
+        testImplementation("org.springframework.boot:spring-boot-test-autoconfigure:4.0.6")
+    }
+
+    sourceSets {
+        main {
+            java.srcDir 'src'
+        }
+        test {
+            java.srcDir 'test'
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    application {
+        mainClass = project.hasProperty("mainClass") ? project.getProperty("mainClass") : ""
+    }
+
+    if (project.hasProperty("educationalRun") && "true".equalsIgnoreCase(project.getProperty("educationalRun"))) {
+        def runOutput = new ByteArrayOutputStream()
+        tasks.run.setStandardOutput(runOutput)
+        tasks.run.doLast { printOutput(runOutput) }
+    }
+}
