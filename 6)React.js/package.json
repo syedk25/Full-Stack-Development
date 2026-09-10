@@ -1,8 +1,0 @@
-{
-  "name": "react-learn-workspace",
-  "version": "1.0.0",
-  "private": true,
-  "workspaces": [
-    "./*"
-  ]
-}
