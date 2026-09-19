@@ -1,17 +1,19 @@
-# IntelliJ IDEA — ignore everywhere in this repo
+# IDE & Editor
 .idea/
 *.iws
 *.iml
 *.ipr
- # VS Code settings
 .vscode/
 
-6)React.js/React_Learn/node_modules/* 
-node_modules
-node_modules
-node_modules
-node_modules
-node_modules
-node_modules
-node_modules
-*.pdf
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Build artifacts
+*.log
+*.tmp
+.DS_Store
+
+# PDFs (documentation only — keep in docs/ but don't commit)
+# Uncomment if you want to exclude all PDFs:
+# *.pdf
