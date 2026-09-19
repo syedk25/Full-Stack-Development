@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.syed</groupId>
-    <artifactId>REST API</artifactId>
+    <artifactId>rest-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>backend</name>
     <description>E-Commerce Backend</description>
