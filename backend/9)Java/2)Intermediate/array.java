@@ -6,8 +6,6 @@ public class array {
  }
  
 }
-
-
 class Innerarray {
 private int age;
 private String name;
