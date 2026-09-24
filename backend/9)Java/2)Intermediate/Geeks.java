@@ -2,8 +2,7 @@ import java.util.ArrayList;
 
 class Geeks {
     public static void main(String[] args) {
-        char ch = 'a';
-
+        char ch = 'a'; 
         // Autoboxing: char -> Character
         Character c = ch;
 
@@ -17,5 +16,5 @@ class Geeks {
 
         System.out.println("Type of ch: " + char.class.getName());
         System.out.println("Value of ch: " + ch);
-    }
+    } 
 }
