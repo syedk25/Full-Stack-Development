@@ -323,251 +323,256 @@ function LessonDemo({ lesson, boundaryRef }) {
   const [noteVisible, setNoteVisible] = useState(true);
   const [toastVisible, setToastVisible] = useState(true);
 
-  if (lesson.demo === "start") {
-    return (
-      <div className="flex max-w-lg flex-col items-center gap-3 text-center">
-        <div className="flex items-center gap-3">
-          <span className="rounded-md bg-coral px-4 py-3 font-display text-lg text-white">React</span>
-          <span className="font-mono text-xl text-muted">+</span>
-          <span className="rounded-md bg-blue px-4 py-3 font-display text-lg text-ink">Motion</span>
+  switch (lesson.demo) {
+    case "start": {
+      return (
+        <div className="flex max-w-lg flex-col items-center gap-3 text-center">
+          <div className="flex items-center gap-3">
+            <span className="rounded-md bg-coral px-4 py-3 font-display text-lg text-white">React</span>
+            <span className="font-mono text-xl text-muted">+</span>
+            <span className="rounded-md bg-blue px-4 py-3 font-display text-lg text-ink">Motion</span>
+          </div>
+          <p className="max-w-md text-sm leading-6 text-muted">
+            Keep your React components. Add Motion to the elements whose changes should feel animated.
+          </p>
         </div>
-        <p className="max-w-md text-sm leading-6 text-muted">
-          Keep your React components. Add Motion to the elements whose changes should feel animated.
-        </p>
-      </div>
-    );
-  }
+      );
+    }
 
-  if (lesson.demo === "first") {
-    return (
-      <div className="flex flex-col items-center gap-5">
-        <motion.div
-          key={replay}
-          className="grid size-24 place-items-center rounded-[35%] bg-coral font-display text-xl text-white shadow-lg shadow-coral/20"
-          initial={{ opacity: 0, y: 34, rotate: -12, scale: 0.8 }}
-          animate={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
-          transition={{ type: "spring", stiffness: 190, damping: 16 }}
-        >
-          Hello!
-        </motion.div>
-        <button
-          className="rounded-sm border border-ink/20 px-4 py-2 text-xs font-semibold transition hover:border-coral hover:text-coral"
-          onClick={() => setReplay((value) => value + 1)}
-          type="button"
-        >
-          Replay entrance
-        </button>
-      </div>
-    );
-  }
-
-  if (lesson.demo === "properties") {
-    return (
-      <div className="flex w-full max-w-xl flex-col items-center gap-5">
-        <div
-          className="flex flex-wrap justify-center gap-1 rounded-md border border-ink/10 bg-paper p-1"
-          aria-label="Choose a motion property"
-        >
-          {Object.keys(propertyTargets).map((name) => (
-            <button
-              className={`rounded px-3 py-2 font-mono text-xs transition ${property === name ? "bg-ink text-paper" : "text-muted hover:text-ink"}`}
-              key={name}
-              aria-pressed={property === name}
-              onClick={() => setProperty(name)}
-              type="button"
-            >
-              {name}
-            </button>
-          ))}
-        </div>
-        <div className="grid h-32 w-full place-items-center overflow-hidden border-y border-dashed border-ink/20">
+    case "first": {
+      return (
+        <div className="flex flex-col items-center gap-5">
           <motion.div
-            className="size-16 rounded-lg bg-blue shadow-md"
-            animate={propertyTargets[property]}
-            transition={{ type: "spring", stiffness: 170, damping: 18 }}
-          />
+            key={replay}
+            className="grid size-24 place-items-center rounded-[35%] bg-coral font-display text-xl text-white shadow-lg shadow-coral/20"
+            initial={{ opacity: 0, y: 34, rotate: -12, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
+            transition={{ type: "spring", stiffness: 190, damping: 16 }}
+          >
+            Hello!
+          </motion.div>
+          <button
+            className="rounded-sm border border-ink/20 px-4 py-2 text-xs font-semibold transition hover:border-coral hover:text-coral"
+            onClick={() => setReplay((value) => value + 1)}
+            type="button"
+          >
+            Replay entrance
+          </button>
         </div>
-        <p className="text-xs text-muted">
-          Currently animating: <strong className="font-mono text-ink">{property}</strong>
-        </p>
-      </div>
-    );
-  }
+      );
+    }
 
-  if (lesson.demo === "transitions") {
-    const transition =
-      transitionType === "spring"
-        ? { type: "spring", stiffness: 180, damping: 13 }
-        : { type: "tween", duration: 0.7, ease: "easeInOut" };
-    return (
-      <div className="flex w-full max-w-xl flex-col items-center gap-5">
-        <div className="flex gap-1 rounded-md border border-ink/10 bg-paper p-1">
-          {["spring", "tween"].map((name) => (
-            <button
-              className={`rounded px-4 py-2 font-mono text-xs ${transitionType === name ? "bg-ink text-paper" : "text-muted hover:text-ink"}`}
-              key={name}
-              aria-pressed={transitionType === name}
-              onClick={() => setTransitionType(name)}
-              type="button"
-            >
-              {name}
-            </button>
-          ))}
-        </div>
-        <div className="grid h-32 w-full place-items-center overflow-hidden border-y border-dashed border-ink/20">
-          <motion.div
-            key={transitionType}
-            className="size-16 rounded-lg bg-yellow shadow-md"
-            initial={{ x: -90, rotate: -12 }}
-            animate={{ x: 90, rotate: 12 }}
-            transition={transition}
-          />
-        </div>
-        <p className="text-xs text-muted">
-          Selected feel: <strong className="font-mono text-ink">{transitionType}</strong>
-        </p>
-      </div>
-    );
-  }
-
-  if (lesson.demo === "gestures") {
-    return (
-      <div className="flex flex-col items-center gap-5">
-        <motion.button
-          className="rounded-md bg-ink px-7 py-4 font-display text-lg text-paper shadow-md"
-          whileHover={{ scale: 1.07, rotate: -3 }}
-          whileTap={{ scale: 0.93 }}
-          transition={{ type: "spring", stiffness: 400, damping: 14 }}
-          type="button"
-        >
-          Hover, then press
-        </motion.button>
-        <p className="text-xs text-muted">Try a pointer or touch screen.</p>
-      </div>
-    );
-  }
-
-  if (lesson.demo === "variants") {
-    return (
-      <div className="flex flex-col items-center gap-5">
-        <motion.div
-          className="flex gap-3"
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.14 } } }}
-          initial="hidden"
-          animate={tilesVisible ? "visible" : "hidden"}
-        >
-          {["bg-coral", "bg-blue", "bg-yellow"].map((color, index) => (
-            <motion.div
-              className={`grid size-16 place-items-center rounded-sm font-mono text-sm text-ink ${color}`}
-              key={color}
-              variants={{ hidden: { opacity: 0, y: 18, scale: 0.9 }, visible: { opacity: 1, y: 0, scale: 1 } }}
-              transition={{ type: "spring", stiffness: 210, damping: 18 }}
-            >
-              0{index + 1}
-            </motion.div>
-          ))}
-        </motion.div>
-        <button
-          className="rounded-sm border border-ink/20 px-4 py-2 text-xs font-semibold hover:border-coral hover:text-coral"
-          onClick={() => setTilesVisible((visible) => !visible)}
-          type="button"
-        >
-          {tilesVisible ? "Hide tiles" : "Show tiles"}
-        </button>
-      </div>
-    );
-  }
-
-  if (lesson.demo === "exit") {
-    return (
-      <div className="flex flex-col items-center gap-3">
-        <div className="grid h-24 place-items-center">
-          <AnimatePresence mode="wait">
-            {noteVisible && (
-              <motion.div
-                className="grid h-16 w-40 place-items-center bg-yellow px-5 text-center font-display text-sm shadow-md"
-                key="lesson-note"
-                initial={{ opacity: 0, y: 16, rotate: -8, scale: 0.85 }}
-                animate={{ opacity: 1, y: 0, rotate: 2, scale: 1 }}
-                exit={{ opacity: 0, y: -12, rotate: 8, scale: 0.85 }}
-                transition={{ type: "spring", stiffness: 230, damping: 18 }}
-              >
-                Exit gracefully
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-        <button
-          className="rounded-sm border border-ink/20 px-4 py-2 text-xs font-semibold hover:border-coral hover:text-coral"
-          onClick={() => setNoteVisible((visible) => !visible)}
-          type="button"
-        >
-          {noteVisible ? "Dismiss note" : "Bring it back"}
-        </button>
-      </div>
-    );
-  }
-
-  if (lesson.demo === "drag") {
-    return (
-      <div
-        className="relative grid h-56 w-full max-w-xl place-items-center rounded-sm border border-dashed border-ink/35 bg-paper/60"
-        ref={boundaryRef}
-      >
-        <span className="absolute left-3 top-3 font-mono text-[10px] uppercase text-muted">Drag inside this area</span>
-        <motion.div
-          className="grid size-16 cursor-grab touch-none select-none place-items-center rounded-full border border-ink bg-blue font-mono text-xs text-ink shadow-md active:cursor-grabbing"
-          drag
-          dragConstraints={boundaryRef}
-          dragElastic={0.12}
-          dragMomentum={false}
-          whileDrag={{ scale: 1.08, rotate: 6 }}
-        >
-          <span aria-hidden="true" className="text-xl">
-            +
-          </span>
-          <small>DRAG</small>
-        </motion.div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="flex w-full max-w-xl flex-col items-center gap-3">
-      <button
-        className="rounded-sm border border-ink/20 px-4 py-2 text-xs font-semibold hover:border-coral hover:text-coral"
-        onClick={() => setToastVisible(true)}
-        type="button"
-      >
-        Show notification
-      </button>
-      <div className="grid min-h-24 w-full place-items-center">
-        <AnimatePresence>
-          {toastVisible && (
-            <motion.aside
-              className="flex w-full max-w-sm items-center gap-3 border border-ink/15 bg-white px-4 py-3 shadow-md"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 16 }}
-              whileHover={{ scale: 1.02 }}
-            >
-              <span className="grid size-8 shrink-0 place-items-center rounded-full bg-blue font-mono text-[9px]">
-                OK
-              </span>
-              <span className="flex-1 text-sm">Saved successfully</span>
+    case "properties": {
+      return (
+        <div className="flex w-full max-w-xl flex-col items-center gap-5">
+          <div
+            className="flex flex-wrap justify-center gap-1 rounded-md border border-ink/10 bg-paper p-1"
+            aria-label="Choose a motion property"
+          >
+            {Object.keys(propertyTargets).map((name) => (
               <button
-                className="text-xs text-muted underline decoration-dotted underline-offset-4 hover:text-coral"
-                onClick={() => setToastVisible(false)}
+                className={`rounded px-3 py-2 font-mono text-xs transition ${property === name ? "bg-ink text-paper" : "text-muted hover:text-ink"}`}
+                key={name}
+                aria-pressed={property === name}
+                onClick={() => setProperty(name)}
                 type="button"
               >
-                Dismiss
+                {name}
               </button>
-            </motion.aside>
-          )}
-        </AnimatePresence>
-      </div>
-    </div>
-  );
+            ))}
+          </div>
+          <div className="grid h-32 w-full place-items-center overflow-hidden border-y border-dashed border-ink/20">
+            <motion.div
+              className="size-16 rounded-lg bg-blue shadow-md"
+              animate={propertyTargets[property]}
+              transition={{ type: "spring", stiffness: 170, damping: 18 }}
+            />
+          </div>
+          <p className="text-xs text-muted">
+            Currently animating: <strong className="font-mono text-ink">{property}</strong>
+          </p>
+        </div>
+      );
+    }
+
+    case "transitions": {
+      const transition =
+        transitionType === "spring"
+          ? { type: "spring", stiffness: 180, damping: 13 }
+          : { type: "tween", duration: 0.7, ease: "easeInOut" };
+      return (
+        <div className="flex w-full max-w-xl flex-col items-center gap-5">
+          <div className="flex gap-1 rounded-md border border-ink/10 bg-paper p-1">
+            {["spring", "tween"].map((name) => (
+              <button
+                className={`rounded px-4 py-2 font-mono text-xs ${transitionType === name ? "bg-ink text-paper" : "text-muted hover:text-ink"}`}
+                key={name}
+                aria-pressed={transitionType === name}
+                onClick={() => setTransitionType(name)}
+                type="button"
+              >
+                {name}
+              </button>
+            ))}
+          </div>
+          <div className="grid h-32 w-full place-items-center overflow-hidden border-y border-dashed border-ink/20">
+            <motion.div
+              key={transitionType}
+              className="size-16 rounded-lg bg-yellow shadow-md"
+              initial={{ x: -90, rotate: -12 }}
+              animate={{ x: 90, rotate: 12 }}
+              transition={transition}
+            />
+          </div>
+          <p className="text-xs text-muted">
+            Selected feel: <strong className="font-mono text-ink">{transitionType}</strong>
+          </p>
+        </div>
+      );
+    }
+
+    case "gestures": {
+      return (
+        <div className="flex flex-col items-center gap-5">
+          <motion.button
+            className="rounded-md bg-ink px-7 py-4 font-display text-lg text-paper shadow-md"
+            whileHover={{ scale: 1.07, rotate: -3 }}
+            whileTap={{ scale: 0.93 }}
+            transition={{ type: "spring", stiffness: 400, damping: 14 }}
+            type="button"
+          >
+            Hover, then press
+          </motion.button>
+          <p className="text-xs text-muted">Try a pointer or touch screen.</p>
+        </div>
+      );
+    }
+
+    case "variants": {
+      return (
+        <div className="flex flex-col items-center gap-5">
+          <motion.div
+            className="flex gap-3"
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.14 } } }}
+            initial="hidden"
+            animate={tilesVisible ? "visible" : "hidden"}
+          >
+            {["bg-coral", "bg-blue", "bg-yellow"].map((color, index) => (
+              <motion.div
+                className={`grid size-16 place-items-center rounded-sm font-mono text-sm text-ink ${color}`}
+                key={color}
+                variants={{ hidden: { opacity: 0, y: 18, scale: 0.9 }, visible: { opacity: 1, y: 0, scale: 1 } }}
+                transition={{ type: "spring", stiffness: 210, damping: 18 }}
+              >
+                0{index + 1}
+              </motion.div>
+            ))}
+          </motion.div>
+          <button
+            className="rounded-sm border border-ink/20 px-4 py-2 text-xs font-semibold hover:border-coral hover:text-coral"
+            onClick={() => setTilesVisible((visible) => !visible)}
+            type="button"
+          >
+            {tilesVisible ? "Hide tiles" : "Show tiles"}
+          </button>
+        </div>
+      );
+    }
+
+    case "exit": {
+      return (
+        <div className="flex flex-col items-center gap-3">
+          <div className="grid h-24 place-items-center">
+            <AnimatePresence mode="wait">
+              {noteVisible && (
+                <motion.div
+                  className="grid h-16 w-40 place-items-center bg-yellow px-5 text-center font-display text-sm shadow-md"
+                  key="lesson-note"
+                  initial={{ opacity: 0, y: 16, rotate: -8, scale: 0.85 }}
+                  animate={{ opacity: 1, y: 0, rotate: 2, scale: 1 }}
+                  exit={{ opacity: 0, y: -12, rotate: 8, scale: 0.85 }}
+                  transition={{ type: "spring", stiffness: 230, damping: 18 }}
+                >
+                  Exit gracefully
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          <button
+            className="rounded-sm border border-ink/20 px-4 py-2 text-xs font-semibold hover:border-coral hover:text-coral"
+            onClick={() => setNoteVisible((visible) => !visible)}
+            type="button"
+          >
+            {noteVisible ? "Dismiss note" : "Bring it back"}
+          </button>
+        </div>
+      );
+    }
+
+    case "drag": {
+      return (
+        <div
+          className="relative grid h-56 w-full max-w-xl place-items-center rounded-sm border border-dashed border-ink/35 bg-paper/60"
+          ref={boundaryRef}
+        >
+          <span className="absolute left-3 top-3 font-mono text-[10px] uppercase text-muted">
+            Drag inside this area
+          </span>
+          <motion.div
+            className="grid size-16 cursor-grab touch-none select-none place-items-center rounded-full border border-ink bg-blue font-mono text-xs text-ink shadow-md active:cursor-grabbing"
+            drag
+            dragConstraints={boundaryRef}
+            dragElastic={0.12}
+            dragMomentum={false}
+            whileDrag={{ scale: 1.08, rotate: 6 }}
+          >
+            <span aria-hidden="true" className="text-xl">
+              +
+            </span>
+            <small>DRAG</small>
+          </motion.div>
+        </div>
+      );
+    }
+
+    default:
+      return (
+        <div className="flex w-full max-w-xl flex-col items-center gap-3">
+          <button
+            className="rounded-sm border border-ink/20 px-4 py-2 text-xs font-semibold hover:border-coral hover:text-coral"
+            onClick={() => setToastVisible(true)}
+            type="button"
+          >
+            Show notification
+          </button>
+          <div className="grid min-h-24 w-full place-items-center">
+            <AnimatePresence>
+              {toastVisible && (
+                <motion.aside
+                  className="flex w-full max-w-sm items-center gap-3 border border-ink/15 bg-white px-4 py-3 shadow-md"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 16 }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <span className="grid size-8 shrink-0 place-items-center rounded-full bg-blue font-mono text-[9px]">
+                    OK
+                  </span>
+                  <span className="flex-1 text-sm">Saved successfully</span>
+                  <button
+                    className="text-xs text-muted underline decoration-dotted underline-offset-4 hover:text-coral"
+                    onClick={() => setToastVisible(false)}
+                    type="button"
+                  >
+                    Dismiss
+                  </button>
+                </motion.aside>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+      );
+  }
 }
 
 function App() {
@@ -577,6 +582,15 @@ function App() {
   const activeIndex = lessons.findIndex((lesson) => lesson.id === activeId);
   const lesson = lessons[activeIndex] || lessons[0];
   const percent = Math.round((completed.length / lessons.length) * 100);
+  const isFinalLesson = activeIndex === lessons.length - 1;
+  const lessonIsComplete = completed.includes(lesson.id);
+  let continueLabel = "Complete and continue";
+
+  if (isFinalLesson) {
+    continueLabel = "Finish course";
+  } else if (lessonIsComplete) {
+    continueLabel = "Continue to next lesson";
+  }
 
   useEffect(() => {
     window.localStorage.setItem("motion-lab-progress", JSON.stringify(completed));
@@ -592,6 +606,14 @@ function App() {
     if (activeIndex < lessons.length - 1) selectLesson(lessons[activeIndex + 1].id);
   }
 
+  function continueCourse() {
+    if (isFinalLesson) {
+      setCompleted((current) => (current.includes(lesson.id) ? current : [...current, lesson.id]));
+      return;
+    }
+    completeLesson();
+  }
+
   return (
     <div className="min-h-screen bg-paper text-ink">
       <header className="mx-auto flex min-h-16 max-w-[1320px] items-center justify-between border-b border-line px-4 sm:px-8">
@@ -603,7 +625,7 @@ function App() {
           <span className="grid size-7 place-items-center rounded-full bg-coral text-lg leading-none text-white">
             m
           </span>
-          motion lab
+          <span>motion lab</span>
         </a>
         <span className="hidden text-xs text-muted sm:block">A beginner course in Framer Motion</span>
         <a
@@ -646,8 +668,8 @@ function App() {
         </div>
       </section>
 
-      <div className="mx-auto grid max-w-[1320px] gap-8 px-4 pb-10 sm:px-8 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-12">
-        <aside className="self-start lg:sticky lg:top-5" aria-label="Course lessons">
+      <div className="mx-auto grid min-w-0 grid-cols-1 max-w-[1320px] gap-8 px-4 pb-10 sm:px-8 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-12">
+        <aside className="min-w-0 self-start lg:sticky lg:top-5" aria-label="Course lessons">
           <div className="mb-3 flex justify-between border-b border-line pb-2 font-mono text-[10px] text-muted">
             <span>YOUR LEARNING PATH</span>
             <span>09</span>
@@ -663,16 +685,20 @@ function App() {
                       const index = lessons.indexOf(item);
                       const active = item.id === lesson.id;
                       const done = completed.includes(item.id);
+                      const linkColor = active ? "bg-ink text-paper" : "text-ink hover:bg-ink/5";
+                      let badgeColor = "bg-ink/5 text-muted";
+                      if (active) badgeColor = "bg-coral text-white";
+                      else if (done) badgeColor = "bg-blue text-ink";
                       return (
                         <button
-                          className={`flex min-h-9 shrink-0 items-center gap-2 rounded-sm px-2 text-left text-xs transition lg:w-full ${active ? "bg-ink text-paper" : "text-ink hover:bg-ink/5"}`}
+                          className={`flex min-h-9 shrink-0 items-center gap-2 rounded-sm px-2 text-left text-xs transition lg:w-full ${linkColor}`}
                           key={item.id}
                           aria-current={active ? "step" : undefined}
                           onClick={() => selectLesson(item.id)}
                           type="button"
                         >
                           <span
-                            className={`grid size-5 shrink-0 place-items-center rounded-full font-mono text-[9px] ${active ? "bg-coral text-white" : done ? "bg-blue text-ink" : "bg-ink/5 text-muted"}`}
+                            className={`grid size-5 shrink-0 place-items-center rounded-full font-mono text-[9px] ${badgeColor}`}
                           >
                             {done ? "✓" : String(index + 1).padStart(2, "0")}
                           </span>
@@ -711,7 +737,7 @@ function App() {
             <p className="mt-1 text-sm leading-6">{lesson.idea}</p>
           </section>
 
-          <div className="mt-8 grid gap-8 xl:grid-cols-[minmax(240px,0.8fr)_minmax(0,1.2fr)]">
+          <div className="mt-8 grid min-w-0 grid-cols-1 gap-8 xl:grid-cols-[minmax(240px,0.8fr)_minmax(0,1.2fr)]">
             <section>
               <div className="mb-4 flex items-center gap-2">
                 <span className="font-mono text-xs text-coral">A</span>
@@ -772,18 +798,10 @@ function App() {
             </button>
             <button
               className="flex min-h-10 items-center gap-3 rounded-sm bg-ink px-4 text-xs font-medium text-paper transition hover:bg-coral"
-              onClick={() =>
-                activeIndex === lessons.length - 1
-                  ? setCompleted((current) => (current.includes(lesson.id) ? current : [...current, lesson.id]))
-                  : completeLesson()
-              }
+              onClick={continueCourse}
               type="button"
             >
-              {activeIndex === lessons.length - 1
-                ? "Finish course"
-                : completed.includes(lesson.id)
-                  ? "Continue to next lesson"
-                  : "Complete and continue"}
+              {continueLabel}
               <span aria-hidden="true">→</span>
             </button>
           </div>

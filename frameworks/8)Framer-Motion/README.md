@@ -26,4 +26,16 @@ npm install -D tailwindcss @tailwindcss/vite
 npm run dev
 ```
 
-In Vite, add the Tailwind plugin to `vite.config.js`, then add `@import "tailwindcss";` to your main CSS file. Import Motion components with `import { motion } from "framer-motion";`.
+In Vite, configure the Tailwind plugin:
+
+```js
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()]
+});
+```
+
+Then add `@import "tailwindcss";` to your main CSS file. Import Motion components with `import { motion } from "framer-motion";`.
