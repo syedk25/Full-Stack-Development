@@ -6,14 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.net.http.HttpRequest;
 import java.util.*;
 
 @RestController
 public class StudentContoller {
 
-  private List<Student> students=new ArrayList<>(List.of(
+  private  List<Student> students=new ArrayList<>(List.of(
           new Student(1,"king",90),
           new Student(2,"syed",90),
           new Student(3,"mahatheer",99)

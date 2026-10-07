@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
   @GetMapping("/")
   public String greet(HttpServletRequest request){
-    return  "welcome to Spring  security" + request.getSession().getId();
+    return  "welcome to Spring  security \n " + request.getSession().getId();
   }
 }
