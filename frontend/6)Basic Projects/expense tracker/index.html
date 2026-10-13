@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <h2>Expense Tracker</h2>
+    </header>
+    
+    <div class="container">
+        <h4>Your Balance</h4>
+        <h1 id="balance">$0.00</h1>
+    
+        <div class="exp-in">
+            <div id="" class="incRemov ire hidden" >
+                <h4>Income </h4>
+                <p  class="plus">+$0.00</p>
+               
+            </div>
+            <div class="expRemov ere hidden" >
+                <h4>Expense</h4>
+                <p class="minus">-$0.00</p>
+                
+            </div>
+            <button class="expense button">Expense</button>
+            <button class="income button">Income</button>
+           </div>
+    
+
+    
+        <h3>Add new transaction</h3>
+        <form id="form">
+           <div>
+                <label for="text">Name:</label><br>
+                <input type="text" id="text" class="input-name" placeholder="Name of transaction" />
+                </div>
+                <br>
+                <div>
+                <label for="amount">Amount:</label><br>
+                <input type="number" id="amount" placeholder="Enter amount..." />
+            </div>
+            <button class="btns"><i class="fa-solid fa-circle-plus fa-2xl"></i></button>
+        </form>
+
+        <h3>History</h3>
+        <ul id="list" class="list">
+            <!-- <li>food <span>-100</span><i class="fa-sharp fa-solid fa-trash fa-xl "></i></li> -->
+        </ul>
+    <script src="app.js"></script>
+
+</body>
+</html>

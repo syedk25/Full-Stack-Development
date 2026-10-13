@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Page</title>
+</head>
+
+<body>
+    <button id="changebutton">Change Text</button>
+
+    <p id="text">There is a Paragraph</p>
+
+    <script type="text/javascript">
+        document.getElementById("changebutton").onclick = function() {
+            var myArray = Array();
+
+            myArray[0] = "Pizza";
+            myArray[1] = "Ice Cream";
+            myArray[2] = "Juce";
+
+            document.getElementById("text").innerHTML = myArray[2];
+        };
+    </script>
+</body>
+
+</html>

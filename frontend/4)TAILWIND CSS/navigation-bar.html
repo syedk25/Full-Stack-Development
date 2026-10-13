@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div>
+
+      <!-- nav bar -->
+      <nav class="flex justify-between items-center px-4 py-4 shadow-md">
+        <h1 class="text-xl font-bold">Logo</h1>
+        <div class="hidden sm:flex gap-4 items-center">
+          <a
+            class="hover:text-blue-500 transition-all duration-300 hover:scale-105 border-b-0 hover:border-b-2"
+            >Home</a
+          >
+          <a class="hover:text-blue-500 transition-colors duration-300"
+            >About</a
+          >
+          <a class="hover:text-blue-500 transition-colors duration-300"
+            >Contact</a
+          >
+          <button class="bg-blue-500 py-2 px-4 text-white rounded-lg">
+            Login
+          </button>
+        </div>
+        <svg
+          class="h-6 w-6 sm:hidden"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 6H20M4 12H20M4 18H20"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </nav>
+
+      <!-- profile card -->
+      <div class="p-6 rounded-xl shadow-lg mx-auto mt-10 max-w-sm bg-white">
+        <img
+          src="photo.jpg"
+          alt="😀😀😀😀😀
+😀😀😀😀😀"
+          class="rounded-full w-32 h-32 mx-auto mt-6 object-cover"
+        />
+        <div class="text-center space-y-2">
+    <h1 class="text-xl font-bold">
+        K. Syed Mahatheer Mohammed
+    </h1>
+
+    <h2 class="text-gray-700">
+        Java Full Stack Developer
+    </h2>
+
+    <p class="text-sm text-gray-500">
+        Passionate about Spring Boot & React.js
+    </p>
+</div>
+
+<div class="flex justify-center gap-4 mt-6">
+    <button
+        class="rounded-lg bg-blue-500 px-4 py-2 text-white transition duration-300 hover:bg-blue-600">
+        Follow
+    </button>
+
+    <button
+        class="rounded-lg border border-gray-400 px-4 py-2 transition duration-300 hover:bg-gray-100">
+        Message
+    </button>
+</div> 
+    </div>
+
+    <!-- pricing card -->
+    <div class="flex flex-col items-center p-6 max-w-sm border rounded-lg shadow-lg mt-10 mx-auto">
+      <h1 class="text-2xl font-bold" > 🚀 Pro Plan</h1>
+      <h2 class="text-3xl font-bold text-blue-500 mt-2" > ₹499/month</h2>
+      <ul class="space-y-3 my-6 w-full">
+    <li>✔ Unlimited Projects</li>
+    <li>✔ Priority Support</li>
+    <li>✔ Cloud Backup</li>
+</ul>
+      <button class="bg-blue-500 py-2 rounded-lg text-white w-full transition duration-300 hover:bg-blue-600">Get Started</button>
+    </div>
+
+    <!-- login form -->
+     <div class="max-w-sm mx-auto mt-6 rounded-lg border p-6 shadow-lg space-y-4">
+      <h1 class="text-center text-2xl font-bold">Welcome Back</h1>
+      <form action="" class="space-y-4">
+        <label for="email" class="block font-medium mb-1">Email</label>
+        <input type="email" name="" id="email" 
+        class="w-full border border-gray-300 rounded-lg outline-none py-2 mb-4
+        focus:outline-none focus:ring-2 focus:ring-blue-400">
+       
+        <label for="password" class="block font-medium mb-1">Password</label>
+        <input type="password" name="" id="password" 
+        class="w-full border border-gray-300 rounded-lg outline-none py-2
+        focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <label class="flex items-center gap-2"><input type="checkbox">Remember me</label>
+        <button class="w-full rounded-lg bg-blue-500 py-2 text-white transition duration-300 hover:bg-blue-600">Login</button>
+        <a href="#" class="block text-center text-sm text-blue-500 hover:underline">Forgot Password?</a>
+ </form>
+     </div>
+
+     <!-- cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 border rounded-lg p-6">
+      <div class="bg-white p-6 rounded-lg shadow-md text-center
+      transition duration-300 hover:translate-y-1 hover:shadow-xl cursor-pointer">1</div>
+      <div class="bg-white p-6 rounded-lg shadow-md text-center
+      transition duration-300 hover:translate-y-1 hover:shadow-xl cursor-pointer">2</div>
+      <div class="bg-white p-6 rounded-lg shadow-md text-center
+      transition duration-300 hover:translate-y-1 hover:shadow-xl cursor-pointer">3</div>
+      <div class="bg-white p-6 rounded-lg shadow-md text-center
+      transition duration-300 hover:translate-y-1 hover:shadow-xl cursor-pointer">4</div>
+      <div class="bg-white p-6 rounded-lg shadow-md text-center
+      transition duration-300 hover:translate-y-1 hover:shadow-xl cursor-pointer">5</div>
+      <div class="bg-white p-6 rounded-lg shadow-md text-center
+      transition duration-300 hover:translate-y-1 hover:shadow-xl cursor-pointer">6</div>
+      </div>
+
+      <!-- col-span -->
+       <div class="grid grid-cols-4 gap-4">
+        <aside class="col-span-1">sidebar</aside>
+        <main class="col-span-3 text-center">main content</main> 
+       </div>
+  </body>
+</html>

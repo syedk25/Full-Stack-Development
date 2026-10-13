@@ -1,0 +1,54 @@
+.stopwatch-container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  text-shadow: 0 0 10px #00bfff;
+  margin-bottom: 16px;
+}
+
+.stopwatch {
+  background: linear-gradient(to bottom right, #222, #000);
+  margin-top: 30px;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #00bfff;
+  border: 3px solid black;
+  width: 480px;
+}
+
+.time-display {
+  font-size: 64px;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.time-unit {
+  width: 100px;
+}
+
+.colon {
+  padding: 0 3px;
+}
+
+button {
+  background: linear-gradient(to bottom, #00bfff, #007acc);
+  color: black;
+  border: none;
+  padding: 12px 24px;
+  margin: 0 8px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid black;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #0099cc, #005f99);
+}

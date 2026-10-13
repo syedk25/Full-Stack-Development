@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    background-image: url("1.jpg"), linear-gradient(rgba(0,0,0,0.4),
+    rgba(0,0,0,0.4));
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+}
+
+.search{
+    padding: 20px;
+    width: 50rem;
+    border-radius:50px;
+    border: none;
+    margin-top: 50px;
+    outline: none;
+}
+
+input::placeholder {
+    font-size: 15px;
+}
+.btn-1{
+    font-size: 25px;
+    padding: 10px; 
+    border-radius:40px; 
+    border: none; 
+    background-color: white;
+    color: black;
+}
+.name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    margin: 30px auto;
+}
+.photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    padding: 2rem 0rem;
+    /* gap: 20px; */
+    width: 80%;
+    margin: auto;
+    row-gap: 2rem;
+    column-gap: 3rem;
+    
+  }
+  .photoss img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+  }
+.jsphoto p,a{
+    display: flex; 
+    justify-content: space-between;
+   color: grey;
+        
+    
+}
+.mores{
+   display: flex;
+   justify-content: center; 
+   align-items: center;
+   margin-bottom: 20px;
+}
+.more{
+    padding: 15px;
+    font-size: 20px;
+    background-color: rgb(6, 174, 143);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .search {
+        width: 90%;
+        max-width: 400px;
+        margin: 20px auto;
+    }
+    .btn-1{
+
+            font-size: 20px;
+            padding: 8px;
+            display: block;
+            margin: 0 auto; /* Center horizontally */
+        }
+        
+}

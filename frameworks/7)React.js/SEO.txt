@@ -1,0 +1,116 @@
+SEO 
+
+SEO is one of the last professional touches before deploying your portfolio.
+Step 1: Update index.html
+ 		<head>
+  			<meta charset="UTF-8" />
+
+ 			<meta  name="viewport" content="width=device-width, initial-scale=1.0" />
+
+ 			 <title>K. Syed | Java Full Stack Developer</title>
+
+  			<meta name="description"  content="Portfolio of K. Syed - Java Full Stack Developer specializing in Java, Spring Boot, React, MySQL, and modern web applications." />
+
+  			<meta   name="keywords"  content="K Syed, Java Developer, Spring Boot Developer, React Developer, Full Stack Developer, Portfolio, Java, React, MySQL" />
+
+  			<meta name="author"  content="K. Syed" />
+	
+ 			 <meta name="robots" content="index, follow" />
+	
+  			<link rel="icon" href="/favicon.ico" />
+		</head>
+3. Step 2: Open Graph (LinkedIn, Facebook, WhatsApp)
+	   Add these below the previous tags.
+
+<meta property="og:type" content="website" /> //tells social media this is a website/article/video/music
+
+<meta
+  property="og:title"		//This becomes the big title in the preview.
+  content="K. Syed | Java Full Stack Developer"		// ex: K. Syed | Java Full Stack Developer
+/>
+
+<meta
+  property="og:description" //This becomes the smaller description.
+  content="Explore my portfolio showcasing Java, Spring Boot, React, MySQL, and Full Stack Development projects." //Example: Explore my portfolio showcasing Java, Spring Boot, React and modern web applications.
+/>
+
+<meta 		//This is the most important one.
+  property="og:image"		//This tells LinkedIn: "Use this image."
+  content="https://your-domain.com/preview.png"		// without it no image with it portfolio image it should be 1200x630 pixels
+/>
+
+<meta
+  property="og:url"    //This tells social media: "This is the official page."
+  content="https://your-domain.com"  //replace it with content="https://k-syed.vercel.app" Later, if you buy: ksyed.dev change it again.
+/>
+
+<meta property="og:site_name" content="K. Syed Portfolio" /> // This is simply the website's name.
+
+Step 4: Theme Color
+
+This changes the browser's address bar color on supported mobile browsers.
+
+<meta
+  name="theme-color"
+  content="#2563eb"
+/>
+
+Step 5: Canonical URL
+
+Avoids duplicate content issues.
+
+<link
+  rel="canonical"
+  href="https://your-domain.com"
+/>
+
+Step 6: Favicon
+
+Place:
+
+favicon.ico
+
+inside
+
+public/
+
+or
+
+public/favicon.ico
+Step 7: Social Preview Image
+
+Create:
+
+preview.png
+
+Recommended size:
+
+1200 × 630
+
+Put it inside:
+
+public/
+
+Then:
+
+public/
+    preview.png
+
+This image appears when someone shares your portfolio link on:
+
+LinkedIn
+WhatsApp
+Facebook
+X (Twitter)
+
+A good preview image includes:
+
+Your photo
+Name
+"Java Full Stack Developer"
+Clean background
+A few technology logos (Java, Spring Boot, React)
+
+
+
+

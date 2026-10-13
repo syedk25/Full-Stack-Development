@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Page</title>
+</head>
+
+<body>
+    <button id="changebutton">Change Text</button>
+
+    <p id="text">There is a Paragraph</p>
+
+    <script type="text/javascript">
+        document.getElementById("changebutton").onclick = function() {
+            var myArray = Array();
+            var textarray = "";
+
+            myArray = ["Pizza", "Ice cream", "Juce", "Fruit", "Salad"];
+
+            myArray.push("Oranges"); // You can add un element
+            myArray.sort(); // to sort an Array
+            myArray.splice(1, 1, "Banana"); // The first indice is the position where you can add element
+            // The Second indice is how many elements you can remove
+
+            for (var i = 0; i < myArray.length; i++) {
+                textarray = textarray + myArray[i] + "<br>";
+            }
+
+            document.getElementById("text").innerHTML = textarray;
+        };
+    </script>
+</body>
+
+</html>
