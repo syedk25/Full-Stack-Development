@@ -16,6 +16,9 @@ public class SecurityConfig {
   @Bean // the value returned by the following method should be managed by the application context ( spring)
   public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity)
   {                                           // takes httpSecurity Object to configure authorization rules(authentication mechanisms, CSRF protection, and other security-related settings for HTTP requests)
+
+     httpSecurity.csrf(customizer -> customizer.disable());
+     httpSecurity.authorizeHttpRequests(request -> request.anyRequest().authenticated()); 
     return httpSecurity.build();
                         // finalize the configuration & return SecurityFilterChain instance
     // SpringSecurity applies this filter to each incomming Http Request
@@ -23,4 +26,4 @@ public class SecurityConfig {
     // in current implementation no security rules are configured
   }
 
-}
+} 
