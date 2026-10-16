@@ -13,8 +13,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 // Activate the SpringSecurity & webSecurity support ( Allow to use SecurityFilterChain )
 public class SecurityConfig {
-
-
+ 
   @Bean // the value returned by the following method should be managed by the application context ( spring)
   public SecurityFilterChain securityFilterChain(HttpSecurity http)
   {                                    
