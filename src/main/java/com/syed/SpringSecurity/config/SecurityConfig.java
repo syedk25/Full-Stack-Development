@@ -6,6 +6,8 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 // tells springBoot this class contain bean definition and configuration logic
@@ -23,6 +25,10 @@ public class SecurityConfig {
     .httpBasic(Customizer.withDefaults())
     .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
     .build();   
+  }
+  @Bean // getting object of one of the filter to manually verify u.name/password instead of app.pro
+  public UserDetailsService userDetailsService(){
+    return new InMemoryUserDetailsManager();
   }
 
 } 
