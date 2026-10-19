@@ -1,4 +1,4 @@
-package com.syed.SpringSecurity;
+package com.syed.SpringSecurity.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +9,5 @@ public class HelloController {
   @GetMapping("/")
   public String greet(HttpServletRequest request){
     return  "welcome to Spring  security \n " + request.getSession().getId();
-
   }
 }

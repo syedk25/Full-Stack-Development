@@ -1,4 +1,4 @@
-package com.syed.SpringSecurity;
+package com.syed.SpringSecurity.model;
 
 public class Student {
   private int id;
