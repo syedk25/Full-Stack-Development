@@ -1,5 +1,6 @@
 package com.syed.SpringSecurity.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -22,38 +23,46 @@ import org.springframework.security.web.SecurityFilterChain;
 // Activate the SpringSecurity & webSecurity support ( Allow to use SecurityFilterChain )
 public class SecurityConfig {
 
+  @Autowired 
+  private UserDetailsService userDetailsService;
+
   @Bean // the value returned by the following method should be managed by the application context ( spring)
   public SecurityFilterChain securityFilterChain(HttpSecurity http)
   {                                    
    return  http
-    .csrf(customizer -> customizer.disable())
-    .authorizeHttpRequests(request -> request.anyRequest().authenticated())
-    .httpBasic(Customizer.withDefaults())
+    .csrf(customizer -> customizer.disable()) // disabling csrf protection
+    .authorizeHttpRequests(request -> request.anyRequest().authenticated()) // only authenticated can login
+   // .formLogin(Customizer.withDefaults())   // login form
+    .httpBasic(Customizer.withDefaults())  // response is value not login form
+    // make http stateless to handle session id
     .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+
     .build();   
   }
- /*  @Bean // getting object of one of the filter to manually verify u.name/password instead of app.pro
-  public UserDetailsService userDetailsService(){
+ // @Bean // it is the filter to manually verify u.name/password instead of app.pro
+  public UserDetailsService userDetailsService()
+  {
      UserDetails user1=User
-     .withDefaultPasswordEncoder()
-     .username("k")
-     .password("k123")
-     .roles("USER")
-     .build();
+     .withDefaultPasswordEncoder() // encryption
+     .username("k")      // set name
+     .password("k123")   //  set password
+     .roles("USER")      // optional (USER/ADMIN)
+     .build();                     // return object of UserDetails
+
      UserDetails user2=User
      .withDefaultPasswordEncoder()
      .username("s")
      .password("s123")
      .roles("ADMIN")
      .build();
+
     return new InMemoryUserDetailsManager(user1,user2);
   }
- */
 
   @Bean 
   public AuthenticationProvider authenticationProvider(){
-    DaoAuthenticationProvider provider=new DaoAuthenticationProvider(null);
-    provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
+    DaoAuthenticationProvider provider=new DaoAuthenticationProvider(userDetailsService);
+    provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance()); // no password encoder
     return provider;
   }
 } 
