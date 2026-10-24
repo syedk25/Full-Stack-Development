@@ -20,6 +20,7 @@ public class UserPrincipal implements UserDetails {
  public Collection<? extends GrantedAuthority> getAuthorities() {
   // TODO Auto-generated method stub
   return Collections.singleton( new SimpleGrantedAuthority("USER"));
+  //                 return single object
  }
 
  @Override
