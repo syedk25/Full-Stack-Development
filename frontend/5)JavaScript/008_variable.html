@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Page</title>
+</head>
+
+<body>
+    <input id="inputtext" type="text" />
+
+    <button id="changebutton">Change Text</button>
+
+    <p id="text">There is a Paragraph</p>
+
+    <script type="text/javascript">
+        document.getElementById("changebutton").onclick = function() {
+            var typetext;
+
+            typetext = document.getElementById("inputtext").value;
+
+            document.getElementById("text").innerHTML = typetext;
+        };
+    </script>
+</body>
+
+</html>

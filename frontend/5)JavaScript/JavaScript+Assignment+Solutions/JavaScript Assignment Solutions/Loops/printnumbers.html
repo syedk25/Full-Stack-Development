@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Loops Assignment</title>
+	<script>
+
+		var num = parseInt(prompt("Enter a number"));
+	
+		for (i = 0; i <= num; i++) {
+			if(i%3==0){
+				continue;
+			}
+			document.write(i);
+			document.write(" ");
+		}
+
+		i = 0;
+		while(i<=num) {
+			if(i%3==0){
+				i++;
+				continue;
+			}
+			document.write(i++);
+			document.write(" ");
+		}
+		
+
+		i = 0;
+		do{
+			if(i%3==0){
+				i++;
+				continue;
+			}
+			document.write(i++);
+			document.write(" ");
+		}while(i<=num);
+
+	
+	</script>
+</head>
+
+
+</html>

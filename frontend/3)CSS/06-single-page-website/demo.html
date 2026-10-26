@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.min.js"></script>
+    <script src="jquery.declarativeToggle.min.js"></script>
+    <script src="modernizr-custom.js"></script>
+</head>
+
+<body>
+    <section id="header">
+        <nav>
+            <a class="logo" href="">
+                <img src="img/logo.png" alt="">
+            </a>
+            <span data-toggle-target="#menu" class="toggle-btn">
+                <img src="img/bar.png" alt="">
+            </span>
+            <ul class="menu" id="menu">
+                <li><a href="#hero-section" class="active">Home</a></li>
+                <li><a href="#about-section">About</a></li>
+                <li><a href="#portfolio-section">Portfolio</a></li>
+                <li><a href="#contact-section">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+    <section id="hero-section">
+        <div id="hero-section-heading">
+            <h3>Hi! Are you looking for Web Developer?</h3>
+            <h2>I'm <span>Mehmood</span> Khalil</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt perspiciatis molestiae nobis modi tempore! Voluptas nulla fugiat ratione, consectetur ab unde magnam deleniti pariatur autem similique! Aspernatur aliquam maxime laborum! Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            <a class="custom-btn" href="">Contact</a>
+        </div>
+    </section>
+    <section id="about-section">
+    	<div id="about-img">
+    		<img src="img/about.jpg" alt="">
+    	</div>
+    	<div id="about-text">
+    		<h2>Web <span>Development</span> Sevices</h2>
+    		<h3>Hire me for you web development needs!</h3>
+    		<p>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Beatae odit porro id facilis, eligendi ut animi provident! Suscipit, impedit tempora, praesentium nulla neque illum modi voluptatem architecto! Doloribus, eos dicta?</p>
+    		<a class="custom-btn" href="">Contact</a>
+    	</div>
+    </section>
+    <section id="portfolio-section">
+    	<div id="portfolio-heading">
+    		<h1>My Portfolio</h1>
+    		<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. </p>
+    	</div>
+    	<div id="portfolio-content">
+    		<div class="portfolio-box">
+    			<div class="portfolio-img">
+    				<img src="img/work-1.jpg" alt="">
+    			</div>
+    			<div class="portfolio-details">
+    				<h4>Webapp Development</h4>
+    				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate autem nesciunt sequi soluta.</p>
+    				<a class="custom-btn" href="">Contact</a>
+    			</div>
+    		</div>
+    		<div class="portfolio-box">
+    			<div class="portfolio-img">
+    				<img src="img/work-2.jpg" alt="">
+    			</div>
+    			<div class="portfolio-details">
+    				<h4>Webapp Development</h4>
+    				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate autem nesciunt sequi solut.</p>
+    				<a class="custom-btn" href="">Contact</a>
+    			</div>
+    		</div>
+    		<div class="portfolio-box">
+    			<div class="portfolio-img">
+    				<img src="img/work-3.jpg" alt="">
+    			</div>
+    			<div class="portfolio-details">
+    				<h4>Webapp Development</h4>
+    				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate autem nesciunt sequi soluta.</p>
+    				<a class="custom-btn" href="">Contact</a>
+    			</div>
+    		</div>
+    	</div>
+    	
+    </section>
+    <section id="contact-section">
+    	<div id="contact-heading">
+    		<h1>Contact Me</h1>
+    		<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. </p>
+    	</div>
+    	<form action="">
+    		<input type="text" placeholder="Type Your Name">
+    		<input type="email" placeholder="Type Your E-Mail">
+    		<textarea name="" placeholder="Type Your Message...."></textarea>
+    		<input type="submit" value="Send">
+    	</form>
+    </section>
+    <script>
+        if(Modernizr.audio){
+            // do this
+            //alert("Audio is supported");
+        }
+        else{
+            // do this
+            //alert("Audio is not supported");
+        }
+    </script>   
+</body>
+
+</html>

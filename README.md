@@ -1,62 +1,35 @@
-# Full-Stack Development Portfolio & Learning Repository
+# DevOps & Deployment
 
-A comprehensive collection of projects, notes, and learning materials covering the full stack development journey — from beginner HTML/CSS/JavaScript to advanced frameworks, backend systems, and DevOps tools.
-
----
-
-## 📁 Repository Structure
-
-| Directory     | Description                                                 |
-| ------------- | ----------------------------------------------------------- |
-| `frontend/`   | HTML, CSS, Tailwind CSS, JavaScript, and basic web projects |
-| `frameworks/` | React.js and Framer Motion projects                         |
-| `backend/`    | Java, DSA, Spring Boot, and MySQL learning materials        |
-| `devops/`     | Git, GitHub, and Vercel guides and cheat sheets             |
-| `docs/`       | PDF notes, eBooks, interview guides, and roadmaps           |
+DevOps tools, Git workflows, and deployment guides for the Full-Stack-Development repository.
 
 ---
 
-## 🗂️ Contents Overview
+## 📂 Contents
 
-### Frontend
+| Folder                     | Description                                                       |
+| -------------------------- | ----------------------------------------------------------------- |
+| `1)Git & GitHub & vercel/` | Version control, GitHub integration, and Vercel deployment guides |
+| `2)Node.js Tools/`         | npm scripts, package management, and build automation             |
 
-- **HTML** — foundational pages and notes
-- **CSS** — styles, layouts, Flexbox, Grid, and exercises
-- **Tailwind CSS** — utility-first CSS practice
-- **JavaScript** — language fundamentals, DOM, data structures, projects
-- **Basic Projects** — 84+ hands-on mini projects (forms, cards, layouts, etc.)
+---
 
-### Frameworks
+## 🛠️ Key Topics
 
-- **React.js** — components, state, props, hooks, Context API, Redux, routing
-- **Framer Motion** — animations and motion design
-
-### Backend
-
-- **Java** — Core, Intermediate, interview prep, internship tasks
-- **DSA** — data structures and algorithms study material
-- **Spring Boot** — AOP, REST APIs, backend architecture
-- **MySQL** — SQL queries and practice
-
-### DevOps
-
-- **Git & GitHub** — version control guides and cheat sheets
-- **Vercel** — deployment resources
-
-### Docs
-
-- Interview question PDFs
-- Roadmap guides (frontend, backend)
-- Course eBooks and certification materials
+- **Git** — Branching, merging, pull requests, and conflict resolution
+- **GitHub** — Repo management, issue tracking, and collaboration workflows
+- **Vercel** — Static site hosting and preview deployments
 
 ---
 
 ## 🚀 Quick Start
 
-Each subdirectory contains its own project-specific files and exercises. Browse the category folders above to explore topics relevant to your learning path.
+- Follow the `1)Git & GitHub & vercel/` guide for version control best practices
+- Use the `devops/` directory for deployment configurations and CI/CD pipelines
+- Refer to `Vercel` documentation for frontend hosting and performance optimization
 
 ---
 
-## 📄 License
+## 📚 Resources
 
-Educational content — personal learning repository.
+- `1)Git & GitHub & vercel/` — Comprehensive cheat sheets and tutorials
+- `2)Node.js Tools/` — Scripts for automating builds and deployments

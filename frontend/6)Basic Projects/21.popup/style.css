@@ -1,0 +1,117 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Hide the checkbox */
+#popup-toggle {
+  display: none;
+}
+
+/* Overlay with blur */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  animation: showOverlay 0.5s forwards;
+  animation-delay: 2s;
+}
+
+/* Popup container */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.85);
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  animation: showPopup 0.5s forwards;
+  animation-delay: 2s;
+}
+
+/* Close button top right */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* Text styling */
+.popup h2 {
+  font-size: 29px;
+  margin-bottom: 10px;
+}
+.popup p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Close Button */
+.popup button {
+  margin-top: 25px;
+  padding: 12px 30px;
+  background: #007bff;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.popup button:hover {
+  background-color: #0056b3;
+}
+
+/* Hide popup when checkbox is checked */
+#popup-toggle:checked ~ .popup-overlay,
+#popup-toggle:checked ~ .popup {
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+}
+
+/* Keyframes */
+@keyframes showPopup {
+  to {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes showOverlay {
+  to {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

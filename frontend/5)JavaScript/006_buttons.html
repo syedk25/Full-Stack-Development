@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Page</title>
+</head>
+
+<body>
+    <p id="text">There is a Paragraph</p>
+
+    <button id="changebutton">Change Text</button>
+
+    <p id="p2"></p>
+
+    <button id="b2">More info+</button>
+
+    <script type="text/javascript">
+        document.getElementById("changebutton").onclick = function() {
+            document.getElementById("text").innerHTML = "Hello Mr Dakir";
+        };
+
+        document.getElementById("b2").onclick = function() {
+            document.getElementById("p2").innerHTML =
+                "There is a description of this product";
+        };
+    </script>
+</body>
+
+</html>

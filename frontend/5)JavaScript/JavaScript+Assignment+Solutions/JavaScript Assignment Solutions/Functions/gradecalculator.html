@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Functions Assignment</title>
+	<script>
+
+	function calculateGrade(){
+		var maths = parseInt(prompt("Enter the marks in maths"));
+		var physics = parseInt(prompt("Enter the marks in physics"));
+		var chemistry = parseInt(prompt("Enter the marks in chemistry"));
+
+		var average = (maths + physics + chemistry)/3;
+		if(average<70){
+			document.write("C Grade");
+		}else if(average >= 70 && average < 90){
+			document.write("B Grade");
+		}else{
+			document.write("A Grade");
+		}
+		
+	}
+
+	calculateGrade();	
+	
+	</script>
+</head>
+
+
+</html>

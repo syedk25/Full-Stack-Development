@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow</title>
+    <style>
+        .container {
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+        }
+
+        .rainbow {
+            width: 80px;
+            height: 80px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .violet {
+            background-color: violet;
+        }
+
+        .indigo {
+            background-color: indigo;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .clear-fix {
+            clear: both;
+        }
+
+        .box {
+            margin-top: 100px;
+            width: 300px;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 50%;
+            border: 1px solid black;
+            box-sizing: border-box;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Rainbow</h2>
+        <div class="violet rainbow"></div>
+        <div class="indigo rainbow"></div>
+        <div class="blue rainbow"></div>
+        <div class="green rainbow"></div>
+        <div class="yellow rainbow"></div>
+        <div class="orange rainbow"></div>
+        <div class="red rainbow"></div>
+    </div>
+    <div class="clear-fix"></div>
+    <div class="box"></div>
+</body>
+<script>
+    var violet = document.querySelector(".violet");
+    var indigo = document.querySelector(".indigo");
+    var blue = document.querySelector(".blue");
+    var green = document.querySelector(".green");
+    var yellow = document.querySelector(".yellow");
+    var orange = document.querySelector(".orange");
+    var red = document.querySelector(".red");
+    var rainbow = document.querySelector(".rainbow");
+
+    var box = document.querySelector(".box");
+
+    // console.log(violet);
+    // console.log(window.getComputedStyle(rainbow).backgroundColor);
+
+    voiletBg = window.getComputedStyle(violet).backgroundColor;
+    indigoBg = window.getComputedStyle(indigo).backgroundColor;
+
+    indigo.addEventListener("click", () => {
+        box.style.background = indigoBg;
+    });
+
+
+
+</script>
+
+</html>

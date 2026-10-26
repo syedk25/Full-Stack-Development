@@ -1,0 +1,61 @@
+
+<html>
+    <h4 id="h4">your score : 10 </h4>
+    <h1>Guess the Number from 1 to 10 </h1>
+
+    <input type="number"  id="input" placeholder="enter your number">
+    <button id="button" onclick="disp()">Check</button>
+    <button id="auto" onclick="find()">find</button>
+    <h3 id="result">try it !</h3>
+</html>
+
+<style>
+    html{
+        text-align: center;
+        margin-top: 150;
+    }
+    h4{
+        margin-left: 300px;
+    }
+</style>
+
+<script>
+
+    var ok=true     
+    var score=10
+    function disp()
+    {
+        var x=Math.floor(Math.random()*10+1)
+        console.log("from 1: ",x)
+
+        var a=Number(document.getElementById("input").value)
+
+        if(x==a)
+        {
+            document.getElementById("result").textContent="you did it, it's correct !"
+            ok=false
+            score++
+            document.getElementById("h4").textContent="your score : "+score
+            alert("YOU WON..")
+        }
+        else{
+            document.getElementById("result").textContent="oops, train again!"
+            ok=true
+            score--
+            document.getElementById("h4").textContent="your score : "+score
+        }
+    }
+
+    function find()
+    {
+        var x=Math.floor(Math.random()*10+1)
+        console.log("from 1: ",x)   
+        input.value=x
+        disp()
+        if(ok)
+        {
+            find()
+        }
+    }
+</script>
+
