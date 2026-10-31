@@ -5,8 +5,7 @@ public class Student {
     private String name;
     private int marks;
 
-
-    public Student(int id, String name,int marks) {
+    public Student(int id, String name, int marks) {
         this.id = id;
         this.name = name;
         this.marks = marks;
@@ -35,7 +34,6 @@ public class Student {
     public void setMarks(int marks) {
         this.marks = marks;
     }
-
 
     @Override
     public String toString() {
