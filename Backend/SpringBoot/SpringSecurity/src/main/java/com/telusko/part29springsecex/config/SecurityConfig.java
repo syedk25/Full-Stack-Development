@@ -29,9 +29,10 @@ public class SecurityConfig {
 
         return http.csrf(customizer -> customizer.disable()).// disable csrf protection
                 authorizeHttpRequests(request -> request
-                    .requestMatchers("register","login")
-                    .permitAll()
-                    .anyRequest().authenticated()). // all users should login
+                        .requestMatchers("register", "login")
+                        .permitAll() // permittig public endpoints
+                        .anyRequest().authenticated())
+                . // all users should login
                 // .formLogin(Customizer.withDefaults()) // login form
                 httpBasic(Customizer.withDefaults()). // for REST Api access, response is json not login form
                 // make http stateless to handle session id
@@ -65,13 +66,13 @@ public class SecurityConfig {
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setPasswordEncoder(new BCryptPasswordEncoder(12));
+        provider.setPasswordEncoder(new BCryptPasswordEncoder(12)); // Decrypt
         provider.setUserDetailsService(userDetailsService); // verify u.name&pass
         return provider;
     }
 
     @Bean
-    public AuthenticationManager authentioManager(AuthenticationConfiguration configuration) throws Exception {
-        return configuration.getAuthenticationManager();
+    public AuthenticationManager authentioManager(AuthenticationConfiguration config) throws Exception {
+        return config.getAuthenticationManager();
     }
 }

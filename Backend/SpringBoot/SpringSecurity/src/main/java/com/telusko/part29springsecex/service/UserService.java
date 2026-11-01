@@ -1,5 +1,7 @@
 package com.telusko.part29springsecex.service;
 
+import java.security.NoSuchAlgorithmException;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -9,29 +11,34 @@ import org.springframework.stereotype.Service;
 import com.telusko.part29springsecex.model.Users;
 import com.telusko.part29springsecex.repo.UserRepo;
 
+import io.jsonwebtoken.security.InvalidKeyException;
+
 @Service
 public class UserService {
- private final UserRepo repo;
- private final AuthenticationManager authManager;
+  private final UserRepo repo;
+  private final AuthenticationManager authManager;
+  private final JWTService jwtService;
 
- UserService(UserRepo repo, AuthenticationManager authManager) {
-  this.repo = repo;
-  this.authManager = authManager;
- }
+  UserService(UserRepo repo, AuthenticationManager authManager) {
+    this.repo = repo;
+    this.authManager = authManager;
+    this.jwtService = new JWTService();
+  }
 
- private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
+  private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
- public Users register(Users user) {
-  user.setPassword(encoder.encode(user.getPassword()));
-  return repo.save(user);
- }
+  public Users register(Users user) {
+    user.setPassword(encoder.encode(user.getPassword()));
+    return repo.save(user);
+  }
 
- public String verify(Users user) {
-  Authentication authentication = authManager
-    .authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+  public String verify(Users user) throws InvalidKeyException, NoSuchAlgorithmException {
+    Authentication authentication = authManager
+        .authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
     if (authentication.isAuthenticated()) {
-     return "Success";
-    }
+      return jwtService.generateToken(user.getUsername());
+    } 
     return "Fail";
- }
+  }
+
 }

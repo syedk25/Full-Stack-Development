@@ -1,11 +1,15 @@
 package com.telusko.part29springsecex.controller;
 
+import java.security.NoSuchAlgorithmException;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.telusko.part29springsecex.model.Users;
 import com.telusko.part29springsecex.service.UserService;
+
+import io.jsonwebtoken.security.InvalidKeyException;
 
 
 
@@ -24,7 +28,7 @@ public class UserController {
  }
 
 @PostMapping("/login")
-public String login(@RequestBody Users user) {
+public String login(@RequestBody Users user) throws InvalidKeyException, NoSuchAlgorithmException {
     System.out.println(user);
     return service.verify(user);
 }
