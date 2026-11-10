@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>HTML Lists Guide</title>
+ <style>
+  body { max-width: 850px; margin: 2rem auto; padding: 0 1rem; font: 1rem/1.6 system-ui, sans-serif; color: #222; }
+  section { border-top: 1px solid #ccc; padding: 1rem 0; }
+  pre { background: #f3f4f6; padding: 1rem; overflow-x: auto; }
+  code { background: #f3f4f6; padding: .1rem .25rem; }
+  .note { border-left: 4px solid #1677c8; padding: .5rem 1rem; background: #eef7ff; }
+ </style>
+</head>
+<body>
+ <header>
+	<h1>HTML Lists</h1>
+	<p>HTML lists group related items and give them meaningful structure. Choose a list type based on the relationship between its items.</p>
+	<nav aria-label="Page contents">
+	 <a href="#unordered">Unordered</a> · <a href="#ordered">Ordered</a> ·
+	 <a href="#description">Description</a> · <a href="#nested">Nested</a> ·
+	 <a href="#guidelines">Guidelines</a>
+	</nav>
+ </header>
+ <main>
+	<section id="unordered">
+	 <h2>1. Unordered lists: <code>&lt;ul&gt;</code></h2>
+	 <p>Use an unordered list when the order is not important, such as a collection of ingredients. Each item must be an <code>&lt;li&gt;</code> (list item).</p>
+	 <pre><code>&lt;ul&gt;
+	&lt;li&gt;Flour&lt;/li&gt;
+	&lt;li&gt;Water&lt;/li&gt;
+	&lt;li&gt;Yeast&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+	 <p>Rendered example:</p>
+	 <ul><li>Flour</li><li>Water</li><li>Yeast</li></ul>
+	 <p>Browsers normally display bullets. Change their appearance with CSS, for example <code>ul { list-style-type: square; }</code>, rather than using obsolete list attributes.</p>
+	</section>
+
+	<section id="ordered">
+	 <h2>2. Ordered lists: <code>&lt;ol&gt;</code></h2>
+	 <p>Use an ordered list when sequence or ranking matters, such as steps in a procedure.</p>
+	 <pre><code>&lt;ol&gt;
+	&lt;li&gt;Gather the ingredients.&lt;/li&gt;
+	&lt;li&gt;Mix them together.&lt;/li&gt;
+	&lt;li&gt;Bake until ready.&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+	 <p>Rendered example:</p>
+	 <ol><li>Gather the ingredients.</li><li>Mix them together.</li><li>Bake until ready.</li></ol>
+	 <h3>Ordered-list options</h3>
+	 <ul>
+		<li><code>start="4"</code> begins numbering at 4.</li>
+		<li><code>reversed</code> counts down instead of up.</li>
+		<li><code>type="A"</code>, <code>type="a"</code>, <code>type="I"</code>, or <code>type="i"</code> uses letters or Roman numerals. The default is decimal numbers.</li>
+	 </ul>
+	 <pre><code>&lt;ol start="3" type="A"&gt;
+	&lt;li&gt;This item is C.&lt;/li&gt;
+	&lt;li&gt;This item is D.&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+	 <p>Rendered example:</p>
+	 <ol start="3" type="A"><li>This item is C.</li><li>This item is D.</li></ol>
+	 <p>The <code>value</code> attribute on an <code>&lt;li&gt;</code> can set an item's number in an ordered list; later items continue from that value.</p>
+	 <pre><code>&lt;ol&gt;
+	&lt;li&gt;First&lt;/li&gt;
+	&lt;li value="10"&gt;Number ten&lt;/li&gt;
+	&lt;li&gt;Number eleven&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+	</section>
+
+	<section id="description">
+	 <h2>3. Description lists: <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, and <code>&lt;dd&gt;</code></h2>
+	 <p>A description list represents terms and their descriptions, or similar name-value groups. The <code>&lt;dl&gt;</code> contains terms (<code>&lt;dt&gt;</code>) and descriptions (<code>&lt;dd&gt;</code>).</p>
+	 <pre><code>&lt;dl&gt;
+	&lt;dt&gt;HTML&lt;/dt&gt;
+	&lt;dd&gt;Structures content on the web.&lt;/dd&gt;
+	&lt;dt&gt;CSS&lt;/dt&gt;
+	&lt;dd&gt;Styles web pages.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+	 <p>Rendered example:</p>
+	 <dl><dt><strong>HTML</strong></dt><dd>Structures content on the web.</dd><dt><strong>CSS</strong></dt><dd>Styles web pages.</dd></dl>
+	 <p>A term may have more than one description. Keep the relationships between terms and descriptions clear.</p>
+	</section>
+
+	<section id="nested">
+	 <h2>4. Nested lists</h2>
+	 <p>A list can be placed inside an <code>&lt;li&gt;</code> to represent sub-items. The nested list belongs inside its parent list item.</p>
+	 <pre><code>&lt;ul&gt;
+	&lt;li&gt;Fruit
+		&lt;ul&gt;
+			&lt;li&gt;Apples&lt;/li&gt;
+			&lt;li&gt;Oranges&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;Vegetables&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+	 <p>Rendered example:</p>
+	 <ul><li>Fruit<ul><li>Apples</li><li>Oranges</li></ul></li><li>Vegetables</li></ul>
+	 <p>Ordered and unordered lists may be nested inside either kind. Avoid unnecessary nesting so the hierarchy stays easy to follow.</p>
+	</section>
+
+	<section id="guidelines">
+	 <h2>5. Good practices and common mistakes</h2>
+	 <ul>
+		<li>Use <code>&lt;ul&gt;</code> when order does not matter, <code>&lt;ol&gt;</code> when it does, and <code>&lt;dl&gt;</code> for term-description relationships.</li>
+		<li>Place list items in <code>&lt;li&gt;</code> elements; do not use list markup solely to create indentation or visual bullets.</li>
+		<li>Use CSS for visual styling and preserve markers when they help communicate the list structure.</li>
+		<li>Semantic lists help browsers and assistive technologies identify related items and their hierarchy.</li>
+	 </ul>
+	 <p class="note"><strong>Quick rule:</strong> If changing the order changes the meaning, use an ordered list. Otherwise, use an unordered list.</p>
+	</section>
+ </main>
+ <footer><p>The core HTML list elements are <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, and <code>&lt;dd&gt;</code>.</p></footer>
+</body>
+</html>

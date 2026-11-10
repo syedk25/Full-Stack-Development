@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>HTML Tables: A Complete Guide</title>
+ <style>
+	:root { color-scheme: light; font-family: system-ui, sans-serif; line-height: 1.6; }
+	body { max-width: 1000px; margin: 0 auto; padding: 1.5rem; color: #202633; }
+	h1, h2 { line-height: 1.2; }
+	section { margin-block: 2rem; }
+	.table-wrap { overflow-x: auto; }
+	table { width: 100%; border-collapse: collapse; margin-block: 1rem; }
+	caption { padding: .5rem; font-weight: 700; text-align: left; }
+	th, td { border: 1px solid #8a94a6; padding: .6rem .8rem; text-align: left; }
+	thead, tfoot { background: #e9eef8; }
+	tbody tr:nth-child(even) { background: #f6f8fb; }
+	code, pre { background: #f1f3f6; border-radius: 4px; }
+	code { padding: .1rem .3rem; }
+	pre { overflow-x: auto; padding: 1rem; }
+	pre code { padding: 0; }
+	.note { border-left: 4px solid #4169e1; padding: .5rem 1rem; background: #f5f7ff; }
+ </style>
+</head>
+<body>
+ <header>
+	<h1>HTML Tables: A Complete Guide</h1>
+	<p>Use an HTML table to present data that naturally belongs in rows and columns, such as schedules, comparisons, or reports. Do not use tables to lay out an entire page.</p>
+ </header>
+
+ <main>
+	<section>
+	 <h2>1. A basic table</h2>
+	 <p>The <code>&lt;table&gt;</code> element contains the table. Each <code>&lt;tr&gt;</code> is a row, <code>&lt;th&gt;</code> marks a heading cell, and <code>&lt;td&gt;</code> holds ordinary data.</p>
+	 <div class="table-wrap">
+		<table>
+		 <caption>Weekly class schedule</caption>
+		 <thead>
+			<tr><th scope="col">Day</th><th scope="col">Subject</th><th scope="col">Room</th></tr>
+		 </thead>
+		 <tbody>
+			<tr><th scope="row">Monday</th><td>HTML</td><td>Room 12</td></tr>
+			<tr><th scope="row">Tuesday</th><td>CSS</td><td>Room 8</td></tr>
+			<tr><th scope="row">Wednesday</th><td>JavaScript</td><td>Room 12</td></tr>
+		 </tbody>
+		</table>
+	 </div>
+	 <p><code>&lt;caption&gt;</code> gives the table a title. Group header rows in <code>&lt;thead&gt;</code> and data rows in <code>&lt;tbody&gt;</code>; an optional <code>&lt;tfoot&gt;</code> is useful for totals or summaries.</p>
+	</section>
+
+	<section>
+	 <h2>2. Header cells and accessibility</h2>
+	 <p>Use <code>&lt;th&gt;</code> for cells that label a row or column, and <code>&lt;td&gt;</code> for data. The <code>scope</code> attribute connects a heading to its column (<code>scope="col"</code>) or row (<code>scope="row"</code>), helping assistive technology explain the table context.</p>
+	 <p>Give each table a useful caption, keep the structure simple, and do not use spaces or empty cells to create visual layout. For complicated multi-level headings, use explicit header associations such as <code>id</code> and <code>headers</code>.</p>
+	</section>
+
+	<section>
+	 <h2>3. Combining cells with colspan and rowspan</h2>
+	 <p><code>colspan</code> makes a cell span multiple columns; <code>rowspan</code> makes it span multiple rows. Other cells must be arranged so every row still fits the intended grid.</p>
+	 <div class="table-wrap">
+		<table>
+		 <caption>Workshop timetable (combined cells)</caption>
+		 <thead>
+			<tr><th scope="col">Time</th><th scope="col">Track A</th><th scope="col">Track B</th></tr>
+		 </thead>
+		 <tbody>
+			<tr><th scope="row">9:00</th><td colspan="2">Welcome session (all attendees)</td></tr>
+			<tr><th scope="row">10:00</th><td rowspan="2">Build a web page</td><td>Design basics</td></tr>
+			<tr><th scope="row">11:00</th><td>Color and type</td></tr>
+		 </tbody>
+		</table>
+	 </div>
+	</section>
+
+	<section>
+	 <h2>4. A summary row with tfoot</h2>
+	 <p>Place totals or other summary information in <code>&lt;tfoot&gt;</code>. Header cells in the footer can also be marked with <code>&lt;th&gt;</code>.</p>
+	 <div class="table-wrap">
+		<table>
+		 <caption>Example order total</caption>
+		 <thead><tr><th scope="col">Item</th><th scope="col">Quantity</th><th scope="col">Price</th></tr></thead>
+		 <tbody>
+			<tr><th scope="row">Notebook</th><td>2</td><td>$6.00</td></tr>
+			<tr><th scope="row">Pen</th><td>3</td><td>$3.00</td></tr>
+		 </tbody>
+		 <tfoot><tr><th scope="row" colspan="2">Total</th><td>$9.00</td></tr></tfoot>
+		</table>
+	 </div>
+	</section>
+
+	<section>
+	 <h2>5. The same table in HTML</h2>
+	 <p>This short example shows the nesting pattern. The browser creates rows and columns from the markup; CSS controls the visual presentation.</p>
+	 <pre><code>&lt;table&gt;
+	&lt;caption&gt;Books in the library&lt;/caption&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th scope="col"&gt;Title&lt;/th&gt;
+			&lt;th scope="col"&gt;Author&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Example Book&lt;/td&gt;
+			&lt;td&gt;A. Writer&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+	</section>
+
+	<section>
+	 <h2>6. Styling and good practices</h2>
+	 <ul>
+		<li>Use CSS for borders, spacing, colors, and alignment; avoid obsolete presentational attributes such as <code>border</code> on the table.</li>
+		<li><code>border-collapse: collapse</code> combines adjacent borders. <code>padding</code> makes cell contents easier to read.</li>
+		<li>Keep tables readable on small screens. This page puts wide tables in a wrapper with <code>overflow-x: auto</code>.</li>
+		<li>Use tables for tabular data, not for page layout. Use CSS Grid or Flexbox for layout.</li>
+	 </ul>
+	 <p class="note">A table is most useful when the relationship between each row and column matters. Choose clear headings and meaningful data before adding decoration.</p>
+	</section>
+ </main>
+</body>
+</html>
