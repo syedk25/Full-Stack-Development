@@ -1,12 +1,14 @@
 package com.syed.backend.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import jakarta.validation.constraints.Min;
 
 @Data
 @AllArgsConstructor
@@ -15,7 +17,7 @@ import jakarta.validation.constraints.Min;
 @Table(name = "product_data") // change name
 public class Product {
     @Id // unique identifier
-    // @GeneratedValue(strategy = GenerationType.IDENTITY) *
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int prodId;
     private String prodName;
     @Min(100)

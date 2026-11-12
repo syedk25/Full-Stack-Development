@@ -1,7 +1,8 @@
 package com.syed.backend.controller;
 
-import com.syed.backend.model.Product;
-import com.syed.backend.service.ProductService;
+import java.util.List;
+import java.util.NoSuchElementException;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -10,17 +11,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-import java.util.NoSuchElementException;
-import org.springframework.web.bind.annotation.RequestParam;
-
+import com.syed.backend.model.Product;
+import com.syed.backend.service.ProductService;
 
 @RestController
-public class ProductController
-{
+public class ProductController {
     private final ProductService service;
 
     public ProductController(ProductService service) {
@@ -37,12 +36,13 @@ public class ProductController
         return service.getProducts();
     }
 
-/*accessing url: http://localhost:8080/product?category="electronic"&price=2000 */
+    /*
+     * accessing url: http://localhost:8080/product?category="electronic"&price=2000
+     */
     @GetMapping("/product")
-    public String getProducts(@RequestParam String category,@RequestParam int price) {
-        return category+" "+price;
+    public String getProducts(@RequestParam String category, @RequestParam int price) {
+        return category + " " + price;
     }
-    
 
     @GetMapping("/products/{prodId}")
     public Product getProductById(@PathVariable int prodId) {
@@ -70,5 +70,17 @@ public class ProductController
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public String handleNotFound(NoSuchElementException ex) {
         return ex.getMessage();
+    }
+
+    // (custom method) defined in repository layer
+    @GetMapping("/price/{price}")
+    List<Product> geProductByPrice(@PathVariable int price) {
+        return service.findProductByPrice(price);
+    }
+    // (custom method ) + (custom Query) defined in repository
+    @GetMapping("/product/price/{product}/{price}")
+    List<Product> findByProdNameAndPrice (@PathVariable String product,
+                                            @PathVariable int price){
+        return service.findByProdNameAndPrice(product,price);
     }
 }
